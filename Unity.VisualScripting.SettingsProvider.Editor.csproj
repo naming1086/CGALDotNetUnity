@@ -8,11 +8,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>Packages</RootNamespace>
-    <ProjectGuid>{A7FACA98-7F29-039B-425F-889E88FD6C7E}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{8075DE74-7009-0DC1-13DC-4E1A67FF41EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Unity.Rider.Editor</AssemblyName>
+    <AssemblyName>Unity.VisualScripting.SettingsProvider.Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEST_FRAMEWORK;ROSLYN_ANALYZER_FIX;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_IG;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -56,48 +56,18 @@
     <Analyzer Include="D:\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\EditorPluginInterop.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\TestEvent.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\StartUpMethodExecutor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\TestsCallback.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\GUIDProvider.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\LibcNativeInterop.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\SyncTestRunEventsHandler.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\CallbackData.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\RiderScriptEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\FileIOProvider.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\SolutionGuidGenerator.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\IGenerator.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\RiderTestRunner.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\RiderScriptEditorData.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\SyncTestRunCallback.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\ProjectGenerationFlag.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\CommandLineParser.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Properties\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\RiderInitializer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\FileSystemUtil.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\AssemblyNameProvider.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\IFileIO.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Discovery.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\ProjectPart.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\RiderPathUtil.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\UnitTesting\CallbackInitializer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\SerializableVersion.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\IGUIDGenerator.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\ProjectGeneration.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\IAssemblyNameProvider.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\RiderMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\RiderScriptEditorDataPersisted.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\LastWriteTracker.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\RiderStyles.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\LoggingLevel.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\ProjectGeneration\PackageManagerTracker.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\PluginSettings.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\PostProcessors\RiderAssetPostprocessor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\Util\StringUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettingsProviderView.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettings\CustomPropertyProviderSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\EditorPreferencesProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettings\TypeOptionsSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettings\AssemblyOptionsSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettingsProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettings\ScriptReferenceResolverSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\EditorPreferencesProviderView.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\ProjectSettings\BackupSettings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.ide.rider@3.0.24\Rider\Editor\com.unity.ide.rider.asmdef" />
+    <None Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\SettingsProvider\Unity.VisualScripting.SettingsProvider.Editor.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -360,6 +330,30 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:\UnityVersion\2021.3.29f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.5\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -741,13 +735,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{E88E85AE-0D12-2C3C-6F8F-F6AD49DB6E7F}</Project>
-      <Name>UnityEditor.TestRunner</Name>
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
+      <Project>{1D696805-2A6E-846B-80AB-2F6C67C25F2C}</Project>
+      <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{A6C30726-4984-AC3D-BC68-F82246A67FDD}</Project>
-      <Name>UnityEngine.TestRunner</Name>
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
+      <Project>{AC463B41-32AC-4942-3C55-A9B430E12D01}</Project>
+      <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{826D8E87-74DD-A064-D854-F51D3DE0FBD6}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{68CA76E7-FD26-296A-9403-FF020ABF5C5D}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{033BFE8E-76F0-D5B1-DA3F-564C530F2138}</Project>
+      <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{3D5485B7-3288-575F-8275-B6486F70AAA9}</Project>
@@ -756,6 +762,14 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{A6E41B60-3E4F-AD8E-D979-EB402A8B1815}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{A6C30726-4984-AC3D-BC68-F82246A67FDD}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{E88E85AE-0D12-2C3C-6F8F-F6AD49DB6E7F}</Project>
+      <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5528A789-FF27-8B07-0357-61DA97EA1D8C}</ProjectGuid>
+    <ProjectGuid>{B20576C5-D86A-FE28-51EB-51F7B43AB59E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Timeline</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -22,11 +22,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Player\</OutputPath>
-    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2021_3_29;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;UNITY_UGP_API;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TIMELINE_FRAMEACCURATE;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -56,357 +56,82 @@
     <Analyzer Include="D:\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingRepairKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix3x3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSimplification.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\MeshExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplificationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSubdivisionKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonPartitionKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriangulationKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\VectorExtension.cs" />
-    <Compile Include="Assets\Examples\Arrangments\ArrangementExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingConnectionsKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Extensions\ArrayExtensions.cs" />
-    <Compile Include="Assets\Common\Utility\GraphicsSettings.cs" />
-    <Compile Include="Assets\Common\Utility\ConsoleRedirect.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenMatrix.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Sphere3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point4d.cs" />
-    <Compile Include="Assets\Examples\Processing\SlicerExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHolesKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeaturesKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Union32.cs" />
-    <Compile Include="Assets\Examples\Triangulations\VoronoiExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Quaternion3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonAlgorithm.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrVertex2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point2i.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Point2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHull3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\HeatMethod.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingRepair.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\HeatMethodKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshFactory.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel3.cs" />
-    <Compile Include="Assets\Examples\RendererBuilder.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonOffset2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Union16.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowski.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix2x2f.cs" />
-    <Compile Include="Assets\Examples\Processing\HeatMethodExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\Polyline2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\TetrahedralRemeshing.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\CGALIntersections_Geometry_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Union64.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriEdge2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingMeshing.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\IMesh.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Ray3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriangulationKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Circle2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedDelaunayTriangulationKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshHalfedge3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingConnectionsKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Marching\MarchingSquares.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibilityKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolygonalIndices.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolyhedraAlgorithm.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingLocateKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingOrientation.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowskiKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedTriangulation2.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\PointExtension.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\CGALIntersections_Shapes.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibilityKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenVector.cs" />
-    <Compile Include="Assets\Examples\Polygons\CreatePolygonExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedTriangulationKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowskiKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\TriangleIndex.cs" />
-    <Compile Include="Assets\Examples\PolyHedra\SurfaceMeshExample.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\GeometryExtension.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsUtil.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Triangle2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsBasis.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonPartitionKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\BaseTriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Line2.cs" />
-    <Compile Include="Assets\Common\Drawing\SegmentRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSubdivisionKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point3i.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedTriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonOffsetKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHull2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\SweepLine.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Marching\MarchingBase.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel3_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingSlicerKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingRepairKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriFace2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedDelaunayTriangulation2.cs" />
-    <Compile Include="Assets\Common\Drawing\CircleRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingOrientationKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Extensions\PrimativeExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\SweepLineKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Extensions\ArrayExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsSurface3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsCheck.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix4x4f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriCell3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibilityKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrQuery.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingConnections.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriVertex2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Triangle2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulation2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsEval.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Radian.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibility.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonMinkowskiExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\TetrahedralRemeshingKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingBooleanKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingSlicerKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Util\ErrorUtil.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Quaternion3d.cs" />
-    <Compile Include="Assets\Examples\Nurbs\NurbsCurvesExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\MinMax.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Marching\MarchingCubes.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Box2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolyhedronFactory.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Shape3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonPartition2.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonSimplificationExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment3f.cs" />
-    <Compile Include="Assets\Examples\PolyHedra\PolyhedronBooleanExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix3x3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedDelaunayTriangulationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Line3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonBooleanKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonKernel2_EEK.cs" />
-    <Compile Include="Assets\Common\Drawing\FaceRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Triangle2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulation3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\Triangulation3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\SurfaceMesh3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingBooleanKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\CGALKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\SweepLineKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\HPoint2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsCurve2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonPartitionKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\HeatMethodKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Line2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\HeatMethodKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\Polyhedron3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrFace2.cs" />
-    <Compile Include="Assets\Common\Drawing\BaseRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenColumnVector.cs" />
-    <Compile Include="Assets\Examples\Hulls\ConvexHull2Example.cs" />
-    <Compile Include="Assets\Examples\Triangulations\Triangulation3Example.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\SurfaceMeshKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point4f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Line3d.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonOffsetExample.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\ShapeExtention.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrHalfEdge2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSubdivisionKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\NefPolyhedronKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedDelaunayTriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\NefPolyhedronKernel3_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenRowVector.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriVertex3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingLocate.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\GeometryKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Ray2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Tetrahedron3f.cs" />
-    <Compile Include="Assets\Common\Drawing\NormalRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\HPoint3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\NefPolyhedron3.cs" />
-    <Compile Include="Assets\Examples\Meshing\SkinSurfaceExample.cs" />
-    <Compile Include="Assets\Common\Drawing\DebugDrawMode.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Util\CGALEnums.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshVertex3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshHitResult.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonPartitionExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\NefPolyhedronKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Marching\MarchingTertahedrons.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\Arrangement2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingMeshingKernel.cs" />
-    <Compile Include="Assets\Examples\Marching\MarchingCubesExample.cs" />
-    <Compile Include="Assets\Examples\Meshing\RefineMeshExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSimplificationKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel2_EEK.cs" />
-    <Compile Include="Assets\Examples\Nurbs\NurbsSurfaceExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHolesKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingOrientationKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingSlicerKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplification2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box3f.cs" />
-    <Compile Include="Assets\Common\Cameras\OrthoCameraController.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector4f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHoles2.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\QuaternionExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonBooleanKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\Triangulation2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\GeometryKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\ExtensionHelper.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsMake.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulation2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\BaseTriangulation3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Segment2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\MathUtil.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshFace3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Triangle3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\SurfaceMeshKernel3_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Colors\ColorRGBA.cs" />
-    <Compile Include="Assets\Examples\InputBehaviour.cs" />
-    <Compile Include="Assets\Examples\Marching\MarchingSquaresExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingRepairKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector4d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplificationKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Util\ArrayCache.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonOffsetKernel2_EEK.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonBooleanExample.cs" />
-    <Compile Include="Assets\Common\Cameras\FreeCameraController.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Shape3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix2x2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Degree.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\HPoint2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Plane3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsModify.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonKernel2_EIK.cs" />
-    <Compile Include="Assets\Examples\PolyHedra\PolyhedronExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\CGALObject.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSubdivision.cs" />
-    <Compile Include="Assets\Examples\PolyHedra\NefPolyhedronExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\BaseTriangulation2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonOffsetKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolyhedronKernel3.cs" />
-    <Compile Include="Assets\Examples\Triangulations\Triangulation2Example.cs" />
-    <Compile Include="Assets\Examples\Hulls\ConvexHull3Example.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Collections\NativeList.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\Polygon2Extension.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrangementKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHolesKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\BaseTriangulationKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\SurfaceMeshFactory.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\PolygonWithHoles2Extension.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriangulationKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Extensions\PrimativeExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingLocateKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Shape2f.cs" />
-    <Compile Include="Assets\Common\Drawing\CompositeRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Ray3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\Polyline3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Triangle3d.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\GameobjectExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Colors\ColorHSV.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\SurfaceSimplificationKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Vector2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\SkinSurfaceMeshingKernel.cs" />
-    <Compile Include="Assets\Examples\Processing\ProcessingExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Circle2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsTess.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplificationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\SkinSurfaceMeshing.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingConnectionsKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\GeometryKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeaturesKernel_EEK.cs" />
-    <Compile Include="Assets\Examples\Polygons\PolygonVisibilityExample.cs" />
-    <Compile Include="Assets\Common\Drawing\GridRenderer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\LinearSystem.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingLocateKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Line2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box2i.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonBoolean2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriangulationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Ray2f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Index.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Sphere3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Plane3d.cs" />
-    <Compile Include="Assets\Examples\PolyHedra\ConvexDecompositionExample.cs" />
-    <Compile Include="Assets\Examples\Polygons\CreatePolygonWithHolesExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point4i.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Ray2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriangulationKernel3.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel3_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\SegmentIndex.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Hulls\ConvexHullKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Shape2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\CGALObjectKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\IntersectionResult2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonBooleanKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point3f.cs" />
-    <Compile Include="Assets\Examples\Arrangments\SweepLineExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeatures.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonFactory.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\Polygon2.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Extensions\EnumExtensions.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Tetrahedron3d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Point2d.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingSlicer.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolyhedronKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulationKernel2_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\CGALIntersections_Geometry_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\HPoint3f.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingBooleanKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Colors\ColorRGB.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix4x4d.cs" />
-    <Compile Include="Assets\CGALDotNet\Extensions\IMeshExtension.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\TetrahedralRemeshingKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box3i.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingMeshingKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingMeshingKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingOrientationKernel.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolygonalCount.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\PolyhedronKernel3_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrangementKernel2.cs" />
-    <Compile Include="Assets\Common\Drawing\VextexRenderer.cs" />
-    <Compile Include="Assets\Examples\Geometry\IntersectionExample.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingBoolean.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedTriangulationKernel2_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\SweepLineKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\SkinSurfaceMeshingKernel_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\CGALGlobal.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\SurfaceMeshKernel3_EEK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowskiKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeaturesKernel_EIK.cs" />
-    <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\HPoint2d.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\Signals\SignalAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\Signals\CustomSignalEventDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\FrameRate.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Animation\AnimationPreviewUpdateCallback.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TimelinePlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\IPropertyPreview.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\ClipCaps.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TimelineAsset_CreateRemove.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\IPropertyCollector.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Attributes\TimelineHelpURLAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Audio\AudioTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TimelineAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\DirectorControlPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\AnimationPreviewUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\INotificationOptionProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\TimelineCreateUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\HashUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\RuntimeClip.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Animation\ICurvesOwner.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\AssetUpgrade\TrackUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Animation\AnimationTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Extensions\TrackExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Activation\ActivationTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Activation\ActivationMixerPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\PrefabControlPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\Signals\SignalReceiver.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Control\ControlPlayableAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\ILayerable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TimelineClip.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Animation\AnimationOutputWeightProcessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\Marker.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\DiscreteTime.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\TimeNotificationBehaviour.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Attributes\TrackColorAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\AssetUpgrade\TimelineUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\AssetUpgrade\ClipUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\ScheduleRuntimeClip.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\AnimatorBindingCache.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Activation\ActivationPlayableAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\TimelineClipExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\MarkerList.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\TimelineUndo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\ParticleControlPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Animation\AnimationPlayableAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\RuntimeElement.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\GroupTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Properties\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\AssetUpgrade\AnimationPlayableAssetUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\IMarker.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\RuntimeClipBase.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\MarkerTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Timeline.deprecated.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\InfiniteRuntimeClip.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\ITimeControl.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\NotificationUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\WeightUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TrackAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\TimeUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Scripting\PlayableTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Audio\AudioClipProperties.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\BasicScriptPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Audio\AudioPlayableAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Evaluation\IntervalTree.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\NotificationFlags.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\SignalTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\TimelineAttributes.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Control\ControlTrack.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Audio\AudioMixerProperties.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\AssetUpgrade\AnimationTrackUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\ActivationControlPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Events\Signals\SignalEmitter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Playables\TimeControlPlayable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Utilities\Extrapolation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\CGALDotNet\CGALDotNet\CGALDotNet.xml" />
-    <None Include="Assets\CGALDotNet\CGALDotNetGeometry\CGALDotNetGeometry.xml" />
-    <None Include="Assets\CGALDotNet\Plugins\mpfr-6.dll" />
-    <None Include="Assets\CGALDotNet\Plugins\CGALWrapper.dll" />
-    <None Include="Assets\CGALDotNet\Plugins\gmp.dll" />
+    <None Include="Library\PackageCache\com.unity.timeline@1.6.5\Runtime\Unity.Timeline.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -984,61 +709,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.Player.csproj">
-      <Project>{23B76788-670F-6EF7-49B4-F8DEDCDE03D8}</Project>
-      <Name>Unity.RenderPipelines.Universal.Shaders.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
-      <Project>{B7EBF50F-574B-FBA0-DDFE-91E5822928E3}</Project>
-      <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{B20576C5-D86A-FE28-51EB-51F7B43AB59E}</Project>
-      <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{03D484F7-E78C-4EDA-7850-7544007ABEBF}</Project>
-      <Name>Unity.TextMeshPro.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
-      <Project>{8288AB07-156F-05E3-4EAB-7DC5341675C3}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{4093078D-A5F3-7089-4236-0BCA2FA5501F}</Project>
-      <Name>Unity.VisualScripting.Flow.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
-      <Project>{9A8EE0D4-64FA-7B7D-79FE-86765FF9BDB1}</Project>
-      <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{634316FF-C1E7-AF66-C765-A77E7C770A2F}</Project>
       <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{05AF5CF5-8558-F5A4-8438-2F5787BF4B96}</Project>
-      <Name>Unity.VisualScripting.Core.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{1579E685-AE7B-1164-3943-BF761D287C67}</Project>
-      <Name>Unity.Mathematics.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{9DC7E5F4-C140-E6B5-FB48-38640AD8A46A}</Project>
-      <Name>Unity.Burst.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
-      <Project>{DB2E62AF-C91C-740C-6AD9-0773730531F2}</Project>
-      <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
-      <Project>{BD20EAB0-DD11-74F3-79D7-707B8B3F9804}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{76310FD7-06F9-F4B5-ACE0-33EDD16B2A7E}</Project>
-      <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
