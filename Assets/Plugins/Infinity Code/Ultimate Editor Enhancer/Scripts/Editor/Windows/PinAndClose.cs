@@ -11,7 +11,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 {
     public class PinAndClose : PopupWindow
     {
-        public const int HEIGHT = 20;
+        public const int Height = 20;
 
         private static GUIContent _closeContent;
         private static GUIContent _tabContent;
@@ -201,8 +201,8 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
         private void SetRect(Rect rect)
         {
             targetRect = rect;
-            Vector2 size = new Vector2(rect.width, HEIGHT);
-            Vector2 pos = new Vector2(rect.x, rect.y) - new Vector2(0, HEIGHT);
+            Vector2 size = new Vector2(rect.width, Height);
+            Vector2 pos = new Vector2(rect.x, rect.y) - new Vector2(0, Height);
             Rect r = new Rect(pos, size);
             WindowsHelper.SetRect(this, r);
         }
@@ -264,7 +264,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
         public void UpdatePosition(Rect rect)
         {
             Rect r = position;
-            Vector2 size = new Vector2(r.width, HEIGHT);
+            Vector2 size = new Vector2(r.width, Height);
             Vector2 pos = rect.position + new Vector2(rect.width, 0) - size;
             r.position = pos;
             r.size = size;

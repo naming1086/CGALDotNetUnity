@@ -22,7 +22,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                     return ToolbarWindowsManager.GetKeywords().Concat(new []
                     {
                         "Show icon on toolbar if selection has View State",
-                        "Timer"
+                        "Timer",
                     });
                 }
             }

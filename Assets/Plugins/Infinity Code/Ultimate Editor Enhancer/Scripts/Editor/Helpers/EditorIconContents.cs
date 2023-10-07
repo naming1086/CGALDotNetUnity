@@ -8,6 +8,12 @@ namespace InfinityCode.UltimateEditorEnhancer
 {
     public static class EditorIconContents
     {
+        private static GUIContent _alignHorizontallyCenter;
+        private static GUIContent _alignHorizontallyCenterActive;
+        private static GUIContent _alignHorizontallyLeft;
+        private static GUIContent _alignHorizontallyLeftActive;
+        private static GUIContent _alignHorizontallyRight;
+        private static GUIContent _alignHorizontallyRightActive;
         private static GUIContent _alignVerticallyCenter;
         private static GUIContent _animationFirstKey;
         private static GUIContent _animationPrevKey;
@@ -25,9 +31,10 @@ namespace InfinityCode.UltimateEditorEnhancer
         private static GUIContent _linked;
         private static GUIContent _material;
         private static GUIContent _pauseButtonOn;
-        private static GUIContent _prefabIcon;
         private static GUIContent _playButtonOn;
         private static GUIContent _popup;
+        private static GUIContent _preAudioPlayOn;
+        private static GUIContent _prefabIcon;
         private static GUIContent _project;
         private static GUIContent _rectTransformBlueprint;
         private static GUIContent _refresh;
@@ -49,6 +56,78 @@ namespace InfinityCode.UltimateEditorEnhancer
         private static GUIContent _unlinked;
         private static GUIContent _verticalLayoutGroup;
         private static GUIContent _winBtnWinMax;
+
+        public static GUIContent alignHorizontallyCenterActive
+        {
+            get
+            {
+                if (_alignHorizontallyCenterActive == null)
+                {
+                    _alignHorizontallyCenterActive = EditorGUIUtility.IconContent("align_horizontally_center_active");
+                }
+                return _alignHorizontallyCenterActive;
+            }
+        }
+
+        public static GUIContent alignHorizontallyCenter
+        {
+            get
+            {
+                if (_alignHorizontallyCenter == null)
+                {
+                    _alignHorizontallyCenter = EditorGUIUtility.IconContent("align_horizontally_center");
+                }
+                return _alignHorizontallyCenter;
+            }
+        }
+
+        public static GUIContent alignHorizontallyLeftActive
+        {
+            get
+            {
+                if (_alignHorizontallyLeftActive == null)
+                {
+                    _alignHorizontallyLeftActive = EditorGUIUtility.IconContent("align_horizontally_left_active");
+                }
+                return _alignHorizontallyLeftActive;
+            }
+        }
+
+        public static GUIContent alignHorizontallyLeft
+        {
+            get
+            {
+                if (_alignHorizontallyLeft == null)
+                {
+                    _alignHorizontallyLeft = EditorGUIUtility.IconContent("align_horizontally_left");
+                }
+                return _alignHorizontallyLeft;
+            }
+        }
+
+        public static GUIContent alignHorizontallyRight
+        {
+            get
+            {
+                if (_alignHorizontallyRight == null)
+                {
+                    _alignHorizontallyRight = EditorGUIUtility.IconContent("align_horizontally_right");
+                }
+                return _alignHorizontallyRight;
+            }
+        }
+
+        public static GUIContent alignHorizontallyRightActive
+        {
+            get
+            {
+                if (_alignHorizontallyRightActive == null)
+                {
+                    _alignHorizontallyRightActive = EditorGUIUtility.IconContent("align_horizontally_right_active");
+                }
+                return _alignHorizontallyRightActive;
+            }
+        }
 
         public static GUIContent alignVerticallyCenter
         {
@@ -253,6 +332,18 @@ namespace InfinityCode.UltimateEditorEnhancer
                     _pauseButtonOn = EditorGUIUtility.IconContent("d_PauseButton On");
                 }
                 return _pauseButtonOn;
+            }
+        }
+
+        public static GUIContent preAudioPlayOn
+        {
+            get
+            {
+                if (_preAudioPlayOn == null)
+                {
+                    _preAudioPlayOn = EditorGUIUtility.IconContent("preAudioPlayOn");
+                }
+                return _preAudioPlayOn;
             }
         }
 

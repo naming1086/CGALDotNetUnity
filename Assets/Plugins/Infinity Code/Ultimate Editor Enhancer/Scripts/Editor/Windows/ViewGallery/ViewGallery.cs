@@ -16,8 +16,8 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
     [InitializeOnLoad]
     public partial class ViewGallery : EditorWindow
     {
-        private const int VERTICAL_MARGIN = 50;
-        private const int MAX_FLAT_HEIGHT = 150;
+        private const int VerticalMargin = 50;
+        private const int MaxFlatHeight = 150;
 
         public delegate void DrawCamerasDelegate(ViewGallery gallery, float rowHeight, float maxLabelWidth, ref int offsetY, ref int row);
 
@@ -74,11 +74,11 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
         {
             Vector2 size = lastSize = position.size;
             size.x -= 20; // margin horizontal
-            size.y -= VERTICAL_MARGIN; // margin vertical + labels height
+            size.y -= VerticalMargin; // margin vertical + labels height
 
             if (filteredItems == null)
             {
-                if (size.y > MAX_FLAT_HEIGHT)
+                if (size.y > MaxFlatHeight)
                 {
                     size.y -= 70;
                     countCols = Mathf.Max(cameras.Length, views.Length);
@@ -417,10 +417,10 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private void InitItems(ArrayList sceneViews)
         {
-            cameras = FindObjectsOfType<Camera>().OrderBy(c => c.name).Select(c => new CameraStateItem(c)).ToArray();
+            cameras = ObjectHelper.FindObjectsOfType<Camera>().OrderBy(c => c.name).Select(c => new CameraStateItem(c)).ToArray();
             countTemporaryCameras = cameras.Count(c => c.camera.GetComponentInParent<TemporaryContainer>() != null);
 
-            ViewState[] viewStates = FindObjectsOfType<ViewState>().OrderBy(v => v.gameObject.name).ToArray();
+            ViewState[] viewStates = ObjectHelper.FindObjectsOfType<ViewState>().OrderBy(v => v.gameObject.name).ToArray();
 
             int sceneCount = sceneViews.Count;
             countAutoViews = 0;
@@ -448,7 +448,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
             if (Prefs.viewGalleryUIState)
             {
-                Canvas[] canvases = FindObjectsOfType<Canvas>().Where(c => c.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
+                Canvas[] canvases = ObjectHelper.FindObjectsOfType<Canvas>().Where(c => c.renderMode == RenderMode.ScreenSpaceOverlay).ToArray();
                 if (canvases.Length > 0)
                 {
                     Bounds bounds = new Bounds();
@@ -522,7 +522,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
             if (filteredItems == null)
             {
-                if (position.height > VERTICAL_MARGIN + MAX_FLAT_HEIGHT) DrawAllItems();
+                if (position.height > VerticalMargin + MaxFlatHeight) DrawAllItems();
                 else DrawFlatItems();
             }
             else DrawFilteredItems();
@@ -633,7 +633,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
                 }
             }
 
-            Canvas[] canvases = FindObjectsOfType<Canvas>();
+            Canvas[] canvases = ObjectHelper.FindObjectsOfType<Canvas>();
             List<Canvas> modifiedCanvases = new List<Canvas>();
 
             try

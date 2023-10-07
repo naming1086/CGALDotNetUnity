@@ -81,6 +81,9 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
         {
             if (!ValidateJson(jsonString)) return;
             if (c == null) return;
+            
+            Undo.RecordObject(c, "Paste JSON");
+            EditorUtility.SetDirty(c);
 
             SerializedObject so = new SerializedObject(c);
 

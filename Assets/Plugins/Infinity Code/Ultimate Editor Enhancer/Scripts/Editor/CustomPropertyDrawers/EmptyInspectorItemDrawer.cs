@@ -5,9 +5,7 @@ using System;
 using System.Text;
 using InfinityCode.UltimateEditorEnhancer.InspectorTools;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace InfinityCode.UltimateEditorEnhancer.PropertyDrawers
 {

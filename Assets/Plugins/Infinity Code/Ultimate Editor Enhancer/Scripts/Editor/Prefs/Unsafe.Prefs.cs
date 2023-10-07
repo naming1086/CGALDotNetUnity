@@ -17,8 +17,9 @@ namespace InfinityCode.UltimateEditorEnhancer
         public static bool _improveCurveEditor = true;
         public static bool _searchInEnumFields = true;
         public static bool _unsafeFeatures = true;
-        public static int searchInEnumFieldsMinValues = 10;
         public static bool longTextFieldsInVisualScripting = false;
+        public static int searchInEnumFieldsMinValues = 10;
+        public static bool _treeControllerCollapse = true;
 
         private static int hasUnsafeBlock = -1; // -1 - unknown, 0 - no block, 1 - has block
 
@@ -46,6 +47,11 @@ namespace InfinityCode.UltimateEditorEnhancer
         {
             get => _searchInEnumFields && unsafeFeatures;
         }
+        
+        public static bool treeControllerCollapse
+        {
+            get => _treeControllerCollapse && unsafeFeatures;
+        }
 
         public static bool unsafeFeatures
         {
@@ -71,7 +77,8 @@ namespace InfinityCode.UltimateEditorEnhancer
                         "Change Number Fields Value By Arrows",
                         "Hierarchy Type Filter",
                         "Improve Curve Editor",
-                        "Search In Enum Fields"
+                        "Search In Enum Fields",
+                        "Tree Controller Collapse"
                     };
                 }
             }
@@ -113,6 +120,8 @@ namespace InfinityCode.UltimateEditorEnhancer
                 }
 
                 EditorGUI.EndDisabledGroup();
+                
+                DrawToggleField("Tree Controller Collapse", ref _treeControllerCollapse, TreeViewControllerUserInputChangedExpandedState.Refresh);
             }
 
             public string GetMenuName()

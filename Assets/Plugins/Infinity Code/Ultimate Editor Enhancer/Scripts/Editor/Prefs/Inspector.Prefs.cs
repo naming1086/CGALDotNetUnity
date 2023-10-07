@@ -13,6 +13,7 @@ namespace InfinityCode.UltimateEditorEnhancer
     {
         public static bool animatorInspectorClips = true;
         public static bool boxColliderDetect = true;
+        public static bool cameraAlignWith = true;
         public static bool componentExtraHeaderButtons = true;
         public static bool dragObjectFields = true;
         public static bool headerCopyPaste = true;
@@ -29,6 +30,8 @@ namespace InfinityCode.UltimateEditorEnhancer
         public static bool objectFieldSelector = true;
         public static bool saveComponentRuntime = true;
         public static bool transformInspectorGlobalValues = true;
+        public static bool transformAlignDistribute = true;
+        public static bool transformAlignDistributeExpanded = true;
 
         public class InspectorManager : StandalonePrefManager<InspectorManager>, IStateablePref
         {
@@ -49,6 +52,8 @@ namespace InfinityCode.UltimateEditorEnhancer
                         "Nested Editor",
                         "Note",
                         "Object Field Selector",
+                        "Align",
+                        "Distribute",
                     };
                 }
             }
@@ -68,8 +73,8 @@ namespace InfinityCode.UltimateEditorEnhancer
                 DrawNestedEditor();
 
                 inspectorNotes = EditorGUILayout.ToggleLeft("Notes", inspectorNotes);
-
                 objectFieldSelector = EditorGUILayout.ToggleLeft("Object Field Selector", objectFieldSelector);
+                transformAlignDistribute = EditorGUILayout.ToggleLeft("Transform Align/Distribute", transformAlignDistribute);
             }
 
             private static void DrawComponentHeader()
@@ -99,6 +104,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                 EditorGUI.indentLevel++;
                 boxColliderDetect = EditorGUILayout.ToggleLeft("Box Collider Detect Size", boxColliderDetect);
                 headerBookmarks = EditorGUILayout.ToggleLeft("Bookmarks", headerBookmarks);
+                cameraAlignWith = EditorGUILayout.ToggleLeft("Camera Align With", cameraAlignWith);
                 headerCopyPaste = EditorGUILayout.ToggleLeft("Copy/Paste", headerCopyPaste);
                 saveComponentRuntime = EditorGUILayout.ToggleLeft("Save Component At Runtime", saveComponentRuntime);
                 transformInspectorGlobalValues = EditorGUILayout.ToggleLeft("Transform Global Values", transformInspectorGlobalValues);

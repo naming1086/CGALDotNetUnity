@@ -42,7 +42,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                 EditorGUI.BeginDisabledGroup(!terrainBrushSize);
 
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(labelWidth));
+                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(LabelWidth));
                 terrainBrushSizeModifiers = DrawModifiers(terrainBrushSizeModifiers);
                 EditorGUILayout.EndHorizontal();
 

@@ -21,7 +21,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
 
         private static void DrawIcon()
         {
-            if (GUILayoutUtils.Button(new GUIContent(Icons.timer, "Timescale"), Styles.appToolbarButtonLeft, GUILayout.Width(30)) == ButtonEvent.click)
+            if (GUILayoutUtils.Button(new GUIContent(Icons.timer, "Timescale"), Styles.appToolbarButtonLeft, GUILayout.Width(32), GUILayout.Height(18)) == ButtonEvent.click)
             {
                 Event e = Event.current;
 

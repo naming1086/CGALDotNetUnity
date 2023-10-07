@@ -16,10 +16,10 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
         private static void Init()
         {
             inited = true;
-            content = new GUIContent(Styles.isProSkin? Icons.duplicate: Icons.duplicateTool, "Left Click - Copy Component.\nRight Click - Paste Component and Advanced Options.");
+            content = new GUIContent(Icons.copy, "Left Click - Copy Component.\nRight Click - Paste Component and Advanced Options.");
         }
         
-        [ComponentHeaderButton]
+        [ComponentHeaderButton(ComponentHeaderButtonOrder.CopyPaste)]
         public static bool DrawHeaderButton(Rect rect, Object[] targets)
         {
             if (!Prefs.headerCopyPaste) return false;

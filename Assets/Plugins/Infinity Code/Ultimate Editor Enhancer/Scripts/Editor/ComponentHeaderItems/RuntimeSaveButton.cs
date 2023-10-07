@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using InfinityCode.UltimateEditorEnhancer.Attributes;
-using InfinityCode.UltimateEditorEnhancer.Interceptors;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -14,13 +13,13 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
     [InitializeOnLoad]
     public static class RuntimeSaveButton
     {
-        private const string FIELD_SEPARATOR = "~«§";
+        private const string FieldSeparator = "~«§";
         private static Dictionary<string, object> savedFields = new Dictionary<string, object>();
 
         static RuntimeSaveButton()
         {
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
-            PropertyHandlerInterceptor.OnAddMenuItems += OnAddMenuItems;
+            EditorApplication.contextualPropertyMenu += OnAddMenuItems;
         }
 
         [MenuItem("CONTEXT/Component/Save Component", false, 502)]
@@ -54,7 +53,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
         }
 
 
-        [ComponentHeaderButton]
+        [ComponentHeaderButton (ComponentHeaderButtonOrder.SaveButton)]
         public static bool Draw(Rect rectangle, Object[] targets)
         {
             if (!Prefs.componentExtraHeaderButtons || !Prefs.saveComponentRuntime) return false;
@@ -73,7 +72,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
             return true;
         }
 
-        private static void OnAddMenuItems(SerializedProperty property, GenericMenu menu)
+        private static void OnAddMenuItems(GenericMenu menu, SerializedProperty property)
         {
             if (!EditorApplication.isPlaying) return;
 
@@ -88,7 +87,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
 
             menu.AddItem(TempContent.Get("Save Field Value"), false, () =>
             {
-                savedFields[instanceID + FIELD_SEPARATOR + path] = SerializedPropertyHelper.GetBoxedValue(prop);
+                savedFields[instanceID + FieldSeparator + path] = SerializedPropertyHelper.GetBoxedValue(prop);
             });
         }
 
@@ -104,7 +103,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
             }
             else if (state == PlayModeStateChange.ExitingPlayMode)
             {
-                SaveOnExitPlayMode[] wrappers = Object.FindObjectsOfType<SaveOnExitPlayMode>();
+                SaveOnExitPlayMode[] wrappers = ObjectHelper.FindObjectsOfType<SaveOnExitPlayMode>();
                 foreach (SaveOnExitPlayMode wrapper in wrappers)
                 {
                     foreach (Component component in wrapper.saveComponents)
@@ -122,7 +121,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
 
             foreach (KeyValuePair<string, object> pair in savedFields)
             {
-                string[] parts = pair.Key.Split(new[]{FIELD_SEPARATOR}, StringSplitOptions.None);
+                string[] parts = pair.Key.Split(new[]{FieldSeparator}, StringSplitOptions.None);
                 int id;
                 if (!int.TryParse(parts[0], out id)) continue;
 
@@ -150,7 +149,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
             {
                 do
                 {
-                    savedFields[component.GetInstanceID() + FIELD_SEPARATOR + p.propertyPath] = SerializedPropertyHelper.GetBoxedValue(p.Copy());
+                    savedFields[component.GetInstanceID() + FieldSeparator + p.propertyPath] = SerializedPropertyHelper.GetBoxedValue(p.Copy());
                 } while (p.NextVisible(true));
             }
 

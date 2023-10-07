@@ -129,8 +129,21 @@ I would be very grateful for the help.", MessageType.Warning);
                     };
                 }
                 
+                EditorGUI.BeginChangeCheck();
                 r.y += 18;
                 item.color = EditorGUI.ColorField(r, "Color", item.color);
+                
+                r.y += 18;
+                item.rootOnly = EditorGUI.Toggle(r, "Root Only", item.rootOnly);
+                
+                r.y += 18;
+                item.recursive = EditorGUI.Toggle(r, "Recursive", item.recursive);
+                
+                if (EditorGUI.EndChangeCheck())
+                {
+                    item.SetDirty();
+                    ProjectFolderIconDrawer.SetDirty();
+                }
                 
                 if (EditorGUI.EndChangeCheck()) ReferenceManager.Save();
 
@@ -158,7 +171,7 @@ I would be very grateful for the help.", MessageType.Warning);
 
             private float GetItemHeight(int index)
             {
-                return 54;
+                return 18 * 5;
             }
 
             private void RemoveItem(ReorderableList list)

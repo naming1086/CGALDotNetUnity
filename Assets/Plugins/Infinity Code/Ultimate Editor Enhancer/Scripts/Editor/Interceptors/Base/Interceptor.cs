@@ -18,7 +18,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Interceptors
         private static int _isAppleM1;
         protected MethodInfo patch;
 
-        private static bool isAppleM1
+        public static bool isAppleM1
         {
             get
             {

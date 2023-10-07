@@ -23,16 +23,22 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
         private static int ehRightMargin;
         private static int activeID;
 
+        private static Type[] defaultTypes = new[]
+        {
+            typeof(Transform),
+            typeof(RectTransform),
+            typeof(CanvasRenderer)
+        };
+
         static ComponentIconDrawer()
         {
             prevItems = new List<Item>();
-            HierarchyItemDrawer.Register("ComponentIconDrawer", DrawHierarchyItem, HierarchyToolOrder.COMPONENT_ICON);
+            HierarchyItemDrawer.Register("ComponentIconDrawer", DrawHierarchyItem, HierarchyToolOrder.ComponentIcon);
             EditorApplication.hierarchyChanged += OnHierarchyChanged;
-
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
         }
 
-        private static void ClearCache()
+        public static void ClearCache()
         {
             if (cache == null) return;
 
@@ -206,10 +212,25 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
             wnd.position = rect;
         }
 
-        private static void ShowMore(IEnumerable<Component> components, Rect rect)
+        private static void ShowMore(GameObject target, IEnumerable<Component> components, Rect rect)
         {
             GenericMenuEx menu = GenericMenuEx.Start();
             bool useSeparator = false;
+
+            if (Prefs.hierarchyIconsHideDefault)
+            {
+                foreach (Type type in defaultTypes)
+                {
+                    Component c = target.GetComponent(type);
+                    if (c == null || c.GetType() != type) continue;
+                        
+                    menu.Add(type.Name, () =>
+                    {
+                        SceneViewManager.OnNextGUI += () => ShowComponent(c, rect);
+                        SceneView.RepaintAll();
+                    });
+                }
+            }
 
             foreach (Component c in components)
             {
@@ -229,11 +250,33 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
                 SceneView.RepaintAll();
             });
 
-            menu.Add("Add To Bookmark", () =>
+            if (!Prefs.hierarchyBookmarks)
             {
-                Bookmarks.Add(prevTarget);
-                SceneView.RepaintAll();
-            });
+                menu.Add("Add To Bookmark", () =>
+                {
+                    Bookmarks.Add(prevTarget);
+                    SceneView.RepaintAll();
+                });
+            }
+
+            if (target.transform.childCount > 1)
+            {
+                menu.Add("Sort By Name", () =>
+                {
+                    List<Transform> children = new List<Transform>();
+                    for (int i = 0; i < target.transform.childCount; i++)
+                    {
+                        children.Add(target.transform.GetChild(i));
+                    }
+                    StringWithNumberComparer comparer = new StringWithNumberComparer();
+                    children.Sort(comparer);
+                    for (int i = 0; i < children.Count; i++)
+                    {
+                        children[i].SetSiblingIndex(i);
+                    }
+                });
+            }
+
             menu.Show();
         }
 
@@ -250,6 +293,12 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
             {
                 Component component = components[i];
                 if (component == null) continue;
+
+                if (Prefs.hierarchyIconsHideDefault)
+                {
+                    if (defaultTypes.Contains(component.GetType())) continue;
+                }
+                
                 Texture2D thumbnail = AssetPreview.GetMiniThumbnail(component);
                 GUIContent content = new GUIContent(
                     thumbnail,
@@ -279,7 +328,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
             int moreItems = components.Length - Prefs.hierarchyIconsMaxItems;
 
             item = new Item(new GUIContent(moreItems > 0 ? "+" + moreItems : "...", "More"), null);
-            item.OnClick += () => ShowMore(components.Skip(Prefs.hierarchyIconsMaxItems), rect);
+            item.OnClick += () => ShowMore(target, components.Skip(Prefs.hierarchyIconsMaxItems), rect);
             items.Add(item);
         }
 

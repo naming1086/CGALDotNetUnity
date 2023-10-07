@@ -58,7 +58,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
 
         static DuplicateTool()
         {
-            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.late, true);
+            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.Late, true);
             tempItems = new List<GameObject>();
         }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using InfinityCode.UltimateEditorEnhancer.InspectorTools;
 using InfinityCode.UltimateEditorEnhancer.JSON;
 using UnityEditor;
+using UnityEngine;
 
 namespace InfinityCode.UltimateEditorEnhancer
 {
@@ -68,6 +69,13 @@ namespace InfinityCode.UltimateEditorEnhancer
                 }
 
                 emptyInspector = EditorGUILayout.ToggleLeft("Empty Inspector", emptyInspector);
+                
+                if (GUILayout.Button("Reimport Items From Window Menu", GUILayout.ExpandWidth(false)))
+                {
+                    RecordUpgrader.InitDefaultEmptyInspectorItems();
+                    EmptyInspector.ResetCachedItems();
+                    ReferenceManager.Save();
+                }
 
                 if (elementsProperty != null)
                 {

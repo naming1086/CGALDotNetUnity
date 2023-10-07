@@ -135,7 +135,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
         static QuickAccess()
         {
             SceneViewManager.OnValidateOpenContextMenu += OnValidateOpenContextMenu;
-            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.quickAccessBar, true);
+            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.QuickAccessBar, true);
         }
 
         public static void CheckActiveWindow()

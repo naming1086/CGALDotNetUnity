@@ -11,8 +11,8 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
     {
         static RowEnable()
         {
-            HierarchyItemDrawer.Register("RowEnable", OnHierarchyItem, HierarchyToolOrder.ROW_ENABLE);
-            HierarchyItemDrawer.Register("RowEnableMiddle", OnHierarchyItemMiddle, HierarchyToolOrder.ROW_ENABLE);
+            HierarchyItemDrawer.Register("RowEnable", OnHierarchyItem, HierarchyToolOrder.RowEnable);
+            HierarchyItemDrawer.Register("RowEnableMiddle", OnHierarchyItemMiddle, HierarchyToolOrder.RowEnable);
         }
 
         private static void OnHierarchyItemMiddle(HierarchyItem item)

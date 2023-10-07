@@ -19,6 +19,9 @@ namespace InfinityCode.UltimateEditorEnhancer
     public class ReferenceManager : ScriptableObject
     {
         [SerializeField]
+        private List<BackgroundRule> _backgroundRules = new List<BackgroundRule>();
+        
+        [SerializeField]
         private List<ProjectBookmark> _bookmarks = new List<ProjectBookmark>();
 
         [SerializeField]
@@ -51,6 +54,11 @@ namespace InfinityCode.UltimateEditorEnhancer
                 if (_instance == null) Load();
                 return _instance;
             }
+        }
+        
+        public static List<BackgroundRule> backgroundRules
+        {
+            get { return instance._backgroundRules; }
         }
 
         public static List<ProjectBookmark> bookmarks

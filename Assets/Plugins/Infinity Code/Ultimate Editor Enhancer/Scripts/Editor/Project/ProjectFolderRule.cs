@@ -5,6 +5,7 @@ using System;
 using InfinityCode.UltimateEditorEnhancer.JSON;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
 {
@@ -14,6 +15,8 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
         public string folderName;
         public string icon;
         public Color color = Color.white;
+        public bool rootOnly = false;
+        public bool recursive = true;
 
         [NonSerialized]
         private bool isDirty = true;

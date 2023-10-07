@@ -21,7 +21,7 @@ namespace InfinityCode.UltimateEditorEnhancer
 
             public override float order
             {
-                get { return Order.autosave; }
+                get { return Order.Autosave; }
             }
 
             public override void Draw()

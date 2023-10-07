@@ -21,7 +21,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
 
         static ViewStateDrawer()
         {
-            SceneViewManager.AddListener(DrawViewStates, SceneViewOrder.normal, true);
+            SceneViewManager.AddListener(DrawViewStates, SceneViewOrder.Normal, true);
         }
 
         private static void DrawViewStates(SceneView sceneView)
@@ -39,8 +39,8 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
             if (e.type == EventType.Layout && 
                 (viewStates == null || EditorApplication.timeSinceStartup - lastUpdateTime > 10))
             {
-                viewStates = Object.FindObjectsOfType<ViewState>();
-                cameras = Object.FindObjectsOfType<Camera>();
+                viewStates = ObjectHelper.FindObjectsOfType<ViewState>();
+                cameras = ObjectHelper.FindObjectsOfType<Camera>();
                 lastUpdateTime = EditorApplication.timeSinceStartup;
 
                 int countStates = viewStates.Length + cameras.Length;

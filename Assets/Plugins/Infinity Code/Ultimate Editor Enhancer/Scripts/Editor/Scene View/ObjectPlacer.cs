@@ -95,7 +95,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
 
             if (go.GetComponent<Camera>() != null)
             {
-                if (Object.FindObjectsOfType<AudioListener>().Length > 1)
+                if (ObjectHelper.FindObjectsOfType<AudioListener>().Length > 1)
                 {
                     AudioListener audioListener = go.GetComponent<AudioListener>();
                     if (audioListener != null) Object.DestroyImmediate(audioListener);

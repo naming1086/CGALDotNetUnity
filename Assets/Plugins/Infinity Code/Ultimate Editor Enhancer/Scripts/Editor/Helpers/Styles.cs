@@ -43,7 +43,8 @@ namespace InfinityCode.UltimateEditorEnhancer
                 if (_appToolbarButtonLeft == null)
                 {
                     _appToolbarButtonLeft = "AppToolbarButtonLeft";
-                    _appToolbarButtonLeft.fixedHeight = 22;
+                    _appToolbarButtonLeft.fixedHeight = 20;
+                    _appToolbarButtonLeft.margin = new RectOffset(0, 0, 0, 0);
                 }
                 return _appToolbarButtonLeft;
             }
@@ -132,7 +133,12 @@ namespace InfinityCode.UltimateEditorEnhancer
         {
             get
             {
-                if (_dropdown == null) _dropdown = "Dropdown";
+                if (_dropdown == null)
+                {
+                    _dropdown = "Dropdown";
+                    _dropdown.fixedHeight = 20;
+                    _dropdown.margin = new RectOffset(0, 0, 0, 0);
+                }
                 return _dropdown;
             }
         }

@@ -204,6 +204,24 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus
             }
         }
 
+        private static void Show()
+        {
+            if (!ValidateOpen()) return;
+            
+            EventManager.BroadcastClosePopup();
+
+            if (Prefs.contextMenuPauseInPlayMode && EditorApplication.isPlaying) EditorApplication.isPaused = true;
+
+            _lastWindow = EditorWindow.focusedWindow;
+
+            foreach (MainLayoutItem item in items)
+            {
+                if (item.isActive) item.Show();
+            }
+
+            _isOpened = true;
+        }
+
         public static void Show(Vector2 position)
         {
             if (!ValidateOpen()) return;
@@ -216,6 +234,17 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus
 
             GetWindows();
             Prepare(position);
+            Show();
+        }
+
+        public static void ShowInLastPosition()
+        {
+            if (!ValidateOpen()) return;
+            
+            EventManager.BroadcastClosePopup();
+
+            GetWindows();
+            Prepare(_lastPosition);
             Show();
         }
 
@@ -237,35 +266,6 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus
             }
 
             return true;
-        }
-
-        private static void Show()
-        {
-            if (!ValidateOpen()) return;
-            
-            EventManager.BroadcastClosePopup();
-
-            if (Prefs.contextMenuPauseInPlayMode && EditorApplication.isPlaying) EditorApplication.isPaused = true;
-
-            _lastWindow = EditorWindow.focusedWindow;
-
-            foreach (MainLayoutItem item in items)
-            {
-                if (item.isActive) item.Show();
-            }
-
-            _isOpened = true;
-        }
-
-        public static void ShowInLastPosition()
-        {
-            if (!ValidateOpen()) return;
-            
-            EventManager.BroadcastClosePopup();
-
-            GetWindows();
-            Prepare(_lastPosition);
-            Show();
         }
     }
 }

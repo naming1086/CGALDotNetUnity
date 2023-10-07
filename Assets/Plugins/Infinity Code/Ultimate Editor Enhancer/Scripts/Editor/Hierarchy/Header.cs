@@ -13,7 +13,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
     {
         static Header()
         {
-            HierarchyItemDrawer.Register("Header", OnHierarchyItem, HierarchyToolOrder.HEADER);
+            HierarchyItemDrawer.Register("Header", OnHierarchyItem, HierarchyToolOrder.Header);
         }
 
         public static JsonArray json

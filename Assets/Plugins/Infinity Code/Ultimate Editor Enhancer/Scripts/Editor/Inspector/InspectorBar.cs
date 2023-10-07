@@ -16,17 +16,16 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 {
     public class InspectorBar: InspectorInjector
     {
-        private const string ELEMENT_NAME = "InspectorBar";
+        private const string ElementName = "InspectorBar";
+        private const int LastLineOffset = 70;
+        private const int LineHeight = 20;
 
         private static InspectorBar instance;
 
         public static Vector2 lastPosition = Vector2.zero;
         public static Func<Component, Component[]> OnInitRelatedComponents;
         public static Action<EditorWindow, List<Component>> OnDrawRelatedComponents;
-
-        private const int LINE_HEIGHT = 20;
-        private const int LAST_LINE_OFFSET = 70;
-
+        
         private static GUIContent _collapseContent;
         private static GUIContent _expandContent;
         private static GUIStyle _selectedContentStyle;
@@ -133,11 +132,11 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 
             DrawLateButtons(wnd, style);
 
-            int rowCount = Mathf.RoundToInt(lastPosition.y / LINE_HEIGHT + 1);
+            int rowCount = Mathf.RoundToInt(lastPosition.y / LineHeight + 1);
             VisualElementWrapper visualElement = visualElements[wnd];
             if (rowCount != visualElement.rowCount)
             {
-                visualElement.style.height = rowCount * LINE_HEIGHT;
+                visualElement.style.height = rowCount * LineHeight;
                 visualElement.rowCount = rowCount;
             }
         }
@@ -192,6 +191,8 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
                 editorIndex++;
                 return;
             }
+            
+            if (elementIndex >= editors.Length) return;
 
             Editor editor = editors[editorIndex];
             if (editor == null || editor.target == null) return;
@@ -210,7 +211,7 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
             GUIStyle style = isActive ? normalStyle : selectedContentStyle;
 
             float maxWidth = wnd.position.width;
-            Rect rect = GetRect(wrapper.width, maxWidth - (elementIndex == editorsList.childCount - 2 ? LAST_LINE_OFFSET : 0));
+            Rect rect = GetRect(wrapper.width, maxWidth - (elementIndex == editorsList.childCount - 2 ? LastLineOffset : 0));
 
             Component component = editor.target as Component;
             bool isDisabled = component != null && !ComponentUtils.GetEnabled(component);
@@ -242,12 +243,12 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
             {
                 GUIContent updateContent = TempContent.Get(Icons.updateAvailable, "Update Available.\nClick to open the built-in update system.");
                 float updateContentWidth = style.CalcSize(updateContent).x;
-                rect = new Rect(wnd.position.width - updateContentWidth - helpContentWidth, lastPosition.y, updateContentWidth, LINE_HEIGHT);
+                rect = new Rect(wnd.position.width - updateContentWidth - helpContentWidth, lastPosition.y, updateContentWidth, LineHeight);
 
                 if (GUI.Button(rect, updateContent, style)) Updater.OpenWindow();
             }
 
-            rect = new Rect(wnd.position.width - helpContentWidth, lastPosition.y, helpContentWidth, LINE_HEIGHT);
+            rect = new Rect(wnd.position.width - helpContentWidth, lastPosition.y, helpContentWidth, LineHeight);
 
             if (GUI.Button(rect, helpContent, style)) Links.OpenDocumentation("inspector-bar");
         }
@@ -289,11 +290,11 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 
         public static Rect GetRect(float width, float maxWidth)
         {
-            Rect rect = new Rect(lastPosition, new Vector2(width, LINE_HEIGHT));
+            Rect rect = new Rect(lastPosition, new Vector2(width, LineHeight));
             if (rect.xMax >= maxWidth)
             {
                 rect.x = 0;
-                rect.y += LINE_HEIGHT;
+                rect.y += LineHeight;
                 lastPosition.x = width;
                 lastPosition.y = rect.y;
             }
@@ -347,7 +348,7 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 
         protected override bool OnInject(EditorWindow wnd, VisualElement mainContainer, VisualElement editorsList)
         {
-            if (mainContainer[0].name == ELEMENT_NAME) mainContainer.RemoveAt(0);
+            if (mainContainer[0].name == ElementName) mainContainer.RemoveAt(0);
 
             if (!Prefs.inspectorBar) return true;
 
@@ -361,8 +362,8 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
             if (!(target is GameObject) && target.GetType() != PrefabImporterRef.type) return false;
 
             VisualElement visualElement = new IMGUIContainer(() => DrawBar(wnd, editorsList));
-            visualElement.name = ELEMENT_NAME;
-            visualElement.style.height = LINE_HEIGHT;
+            visualElement.name = ElementName;
+            visualElement.style.height = LineHeight;
             visualElement.style.position = Position.Relative;
             mainContainer.Insert(0, visualElement);
 

@@ -15,8 +15,8 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
     [InitializeOnLoad]
     public static class ProjectFolderIconDrawer
     {
-        private const int CHECK_TWO_COLUMNS_TIME = 3;
-        private const int CHECK_CONTENT_TIME = 10;
+        private const int CheckTwoColumnsTime = 3;
+        private const int CheckContentTime = 10;
         
         private static TreeViewState treeViewState;
         private static Dictionary<string, FolderItem> ruleCache = new Dictionary<string, FolderItem>();
@@ -69,6 +69,8 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
             for (int i = 0; i < ReferenceManager.projectFolderIcons.Count; i++)
             {
                 ProjectFolderRule rule = ReferenceManager.projectFolderIcons[i];
+                if (rule.rootOnly && folderParts.Length > 2) continue;
+                
                 string[] parts = rule.parts;
                 for (int j = 0; j < parts.Length; j++)
                 {
@@ -85,6 +87,8 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
                 for (int j = 0; j < ReferenceManager.projectFolderIcons.Count; j++)
                 {
                     ProjectFolderRule rule = ReferenceManager.projectFolderIcons[j];
+                    if (!rule.recursive) continue;
+                    
                     string[] parts = rule.parts;
                     for (int k = 0; k < parts.Length; k++)
                     {
@@ -116,7 +120,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
 
         private static void UpdateTreeViewState()
         {
-            if (treeViewState != null && EditorApplication.timeSinceStartup - lastCheckTwoColumns < CHECK_TWO_COLUMNS_TIME) return;
+            if (treeViewState != null && EditorApplication.timeSinceStartup - lastCheckTwoColumns < CheckTwoColumnsTime) return;
             
             if (projectWindow == null)
             {
@@ -150,7 +154,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
             {
                 get
                 {
-                    if (EditorApplication.timeSinceStartup - lastCheckContentTime > CHECK_CONTENT_TIME)
+                    if (EditorApplication.timeSinceStartup - lastCheckContentTime > CheckContentTime)
                     {
                         if (!Directory.Exists(path)) path = AssetDatabase.GetAssetPath(instanceID);
                         

@@ -9,7 +9,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ComponentHeader
 {
     public static class ComponentBookmark
     {
-        [ComponentHeaderButton]
+        [ComponentHeaderButton(ComponentHeaderButtonOrder.Bookmark)]
         public static bool DrawHeaderButton(Rect rect, Object[] targets)
         {
             if (targets.Length != 1)

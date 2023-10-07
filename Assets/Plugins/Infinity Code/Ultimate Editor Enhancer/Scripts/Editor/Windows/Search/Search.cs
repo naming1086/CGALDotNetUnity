@@ -20,8 +20,8 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
     [InitializeOnLoad]
     public partial class Search : PopupWindow
     {
-        private const int width = 500;
-        private const int maxRecords = 50;
+        private const int Width = 500;
+        private const int MaxRecords = 50;
 
         private static Dictionary<int, Record> projectRecords;
         private static Dictionary<int, Record> sceneRecords;
@@ -189,7 +189,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private static void CacheSceneGameObjects()
         {
-            Transform[] transforms = FindObjectsOfType<Transform>(true);
+            Transform[] transforms = ObjectHelper.FindObjectsOfType<Transform>(true);
             Dictionary<int, Record> tempRecords = new Dictionary<int, Record>(transforms.Length);
 
             for (int i = 0; i < transforms.Length; i++)
@@ -219,7 +219,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private static void CacheSceneItems()
         {
-            Component[] components = FindObjectsOfType<Component>(true);
+            Component[] components = ObjectHelper.FindObjectsOfType<Component>(true);
             Dictionary<int, Record> tempRecords = new Dictionary<int, Record>(Mathf.NextPowerOfTwo(components.Length));
 
             for (int i = 0; i < components.Length; i++)
@@ -397,7 +397,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private void OnEnable()
         {
-            bestRecords = new Record[maxRecords];
+            bestRecords = new Record[MaxRecords];
             countBestRecords = 0;
             bestRecordIndex = 0;
 
@@ -495,7 +495,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
             if (focusedWindow != null) position += focusedWindow.position.position;
 
-            Rect rect = new Rect(position + new Vector2(width / -2, -30), new Vector2(width, 140));
+            Rect rect = new Rect(position + new Vector2(Width / -2, -30), new Vector2(Width, 140));
 
 #if !UNITY_EDITOR_OSX
             if (rect.y < 5) rect.y = 5;
@@ -623,7 +623,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private int TakeBestRecords(IEnumerable<KeyValuePair<int, Record>> tempBestRecords)
         {
-            bestRecords = tempBestRecords.Take(maxRecords)
+            bestRecords = tempBestRecords.Take(MaxRecords)
                 .Select(r => r.Value)
                 //.OrderBy(r => r.label.Length)
                 //.ThenBy(r => r.label)

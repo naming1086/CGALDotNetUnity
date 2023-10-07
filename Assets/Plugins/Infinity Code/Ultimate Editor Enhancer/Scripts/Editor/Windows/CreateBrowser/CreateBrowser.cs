@@ -11,7 +11,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 {
     public partial class CreateBrowser: EditorWindow
     {
-        public const int PREVIEW_HEIGHT = 90;
+        public const int PreviewHeight = 90;
 
         public Action<CreateBrowser> OnClose;
         public Action<string> OnSelectCreate;
@@ -204,7 +204,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
                 if (currentPrefab != null) currentPrefab.DrawPreview();
                 else
                 {
-                    GUILayoutUtility.GetRect(1, PREVIEW_HEIGHT);
+                    GUILayoutUtility.GetRect(1, PreviewHeight);
                     Rect rect = GUILayoutUtility.GetLastRect();
                     if (previewBackground == null) previewBackground = Resources.CreateSinglePixelTexture(0.33f);
                     GUI.DrawTexture(rect, previewBackground);

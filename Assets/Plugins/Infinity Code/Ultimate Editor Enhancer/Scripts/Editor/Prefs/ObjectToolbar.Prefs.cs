@@ -27,7 +27,7 @@ namespace InfinityCode.UltimateEditorEnhancer
 
             public override float order
             {
-                get { return Order.objectToolbar; }
+                get { return Order.ObjectToolbar; }
             }
 
             public override void Draw()

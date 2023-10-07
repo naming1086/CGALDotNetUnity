@@ -122,7 +122,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
                     previewEditor = Editor.CreateEditor(AssetDatabase.LoadAssetAtPath<GameObject>(path));
                 }
 
-                if (previewEditor != null) previewEditor.OnInteractivePreviewGUI(GUILayoutUtility.GetRect(1, PREVIEW_HEIGHT), Styles.grayRow);
+                if (previewEditor != null) previewEditor.OnInteractivePreviewGUI(GUILayoutUtility.GetRect(1, PreviewHeight), Styles.grayRow);
             }
 
             protected override void InitContent()

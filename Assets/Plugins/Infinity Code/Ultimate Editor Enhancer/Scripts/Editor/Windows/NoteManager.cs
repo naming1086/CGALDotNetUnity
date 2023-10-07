@@ -108,6 +108,7 @@ namespace InfinityCode.UltimateEditorEnhancer
             EditorGUILayout.EndScrollView();
         }
 
+        [MenuItem(WindowsHelper.MenuPath + "Notes", false, 101)]
         public static NoteManager Open()
         {
             NoteManager window = GetWindow<NoteManager>("Notes", true);

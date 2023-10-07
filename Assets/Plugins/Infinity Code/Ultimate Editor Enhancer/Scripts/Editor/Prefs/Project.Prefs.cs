@@ -13,6 +13,7 @@ namespace InfinityCode.UltimateEditorEnhancer
         public static bool projectCreateFolderByShortcut = true;
         public static bool projectCreateScript = true;
         public static bool projectCreateMaterial = true;
+        public static bool projectPlayAudio = true;
 
         public class ProjectManager : StandalonePrefManager<ProjectManager>, IHasShortcutPref, IStateablePref
         {
@@ -24,6 +25,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                     {
                         "Create Folder By Shortcut",
                         "Create Script Button",
+                        "Play Audio Button",
                     };
                 }
             }
@@ -34,6 +36,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                 projectCreateFolderByShortcut = EditorGUILayout.ToggleLeft("Create Folder By Shortcut (F7)", projectCreateFolderByShortcut);
                 projectCreateMaterial = EditorGUILayout.ToggleLeft("Create Material Button", projectCreateMaterial);
                 projectCreateScript = EditorGUILayout.ToggleLeft("Create Script Button", projectCreateScript);
+                projectPlayAudio = EditorGUILayout.ToggleLeft("Play Audio Button", projectPlayAudio);
             }
 
             public string GetMenuName()

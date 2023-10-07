@@ -182,26 +182,32 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
         {
             Event e = Event.current;
             r.y += 27;
+            int offset = 18;
 
-            bool containBookmark = Bookmarks.Contain(component);
-            if (GUI.Button(new Rect(r.xMax - 18, r.y, 16, 16), containBookmark ? removeBookmarkContent : bookmarkContent, Styles.transparentButton))
+            if (!Prefs.headerBookmarks)
             {
-                if (e.modifiers == EventModifiers.Control)
+                bool containBookmark = Bookmarks.Contain(component);
+                if (GUI.Button(new Rect(r.xMax - 18, r.y, 16, 16), containBookmark ? removeBookmarkContent : bookmarkContent, Styles.transparentButton))
                 {
-                    Bookmarks.ShowWindow();
+                    if (e.modifiers == EventModifiers.Control)
+                    {
+                        Bookmarks.ShowWindow();
+                    }
+                    else
+                    {
+                        if (containBookmark) Bookmarks.Remove(component);
+                        else Bookmarks.Add(component);
+                        Bookmarks.Redraw();
+                    }
                 }
-                else
-                {
-                    if (containBookmark) Bookmarks.Remove(component);
-                    else Bookmarks.Add(component);
-                    Bookmarks.Redraw();
-                }
+                
+                offset += 18;
             }
 
             if (debugContent == null) debugContent = new GUIContent(Icons.debug, "Debug");
             if (debugOnContent == null) debugOnContent = new GUIContent(Icons.debugOn, "Debug");
 
-            if (GUI.Button(new Rect(r.width - 36, r.y, 16, 16), isDebug ? debugOnContent : debugContent, Styles.transparentButton))
+            if (GUI.Button(new Rect(r.width - offset, r.y, 16, 16), isDebug ? debugOnContent : debugContent, Styles.transparentButton))
             {
                 ToggleDebugMode();
             }

@@ -69,7 +69,7 @@ namespace InfinityCode.UltimateEditorEnhancer
             };
         }
 
-        private static void InitDefaultEmptyInspectorItems()
+        public static void InitDefaultEmptyInspectorItems()
         {
             List<EmptyInspector.Group> groups = ReferenceManager.emptyInspectorItems;
             groups.Clear();
@@ -357,8 +357,6 @@ namespace InfinityCode.UltimateEditorEnhancer
             QuickAccessItem bookmarks = items.FirstOrDefault(i => i.type == QuickAccessItemType.window &&
                 i.settings[0].StartsWith("InfinityCode.UltimateEditorEnhancer.Windows.Bookmarks")); 
             
-            Debug.Log(bookmarks); 
-
             int index = items.Count;
             if (bookmarks != null) index = items.IndexOf(bookmarks) + 1;
 

@@ -56,36 +56,39 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
             
             ButtonEvent be = GUILayoutUtils.Button(r, TempContent.Get(Icons.addFolder, "Create Subfolder\n(Right click to select default names)"), GUIStyle.none);
 
-            if (be == ButtonEvent.click)
+            if (be == ButtonEvent.click) ProcessClick(item);
+        }
+
+        private static void ProcessClick(ProjectItem item)
+        {
+            Event e = Event.current;
+            Object asset = item.asset;
+            if (asset == null) return;
+            
+            if (e.button == 0)
             {
-                Event e = Event.current;
-                if (e.button == 0)
-                {
-                    CreateFolder(item.asset, "New Folder");
-                }
-                else if (e.button == 1)
-                {
-                    Object asset = item.asset;
-                    
-                    GenericMenuEx menu = GenericMenuEx.Start();
+                CreateFolder(asset, "New Folder");
+            }
+            else if (e.button == 1)
+            {
+                GenericMenuEx menu = GenericMenuEx.Start();
 
-                    if (item.path.EndsWith("/Scripts"))
-                    {
-                        menu.Add("Editor", () => CreateFolder(asset, "Editor"));
-                        menu.AddSeparator();
-                    }
-
-                    for (int i = 0; i < defaultNames.Length; i++)
-                    {
-                        string folderName = defaultNames[i];
-                        menu.Add(folderName, () => CreateFolder(asset, folderName));
-                    }
-                    
+                if (item.path.EndsWith("/Scripts"))
+                {
+                    menu.Add("Editor", () => CreateFolder(asset, "Editor"));
                     menu.AddSeparator();
-                    menu.Add("New Folder", () => CreateFolder(asset, "New Folder"));
-                    
-                    menu.Show();
                 }
+
+                for (int i = 0; i < defaultNames.Length; i++)
+                {
+                    string folderName = defaultNames[i];
+                    menu.Add(folderName, () => CreateFolder(asset, folderName));
+                }
+
+                menu.AddSeparator();
+                menu.Add("New Folder", () => CreateFolder(asset, "New Folder"));
+
+                menu.Show();
             }
         }
     }

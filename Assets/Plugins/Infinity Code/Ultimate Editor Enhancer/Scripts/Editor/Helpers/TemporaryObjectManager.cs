@@ -18,7 +18,7 @@ namespace InfinityCode.UltimateEditorEnhancer
         [MenuItem(WindowsHelper.MenuPath + "Temporary Objects/Destroy Container", false, 102)]
         public static void DestroyTemporaryContainer()
         {
-            TemporaryContainer temporaryContainer = Object.FindObjectOfType<TemporaryContainer>();
+            TemporaryContainer temporaryContainer = ObjectHelper.FindObjectOfType<TemporaryContainer>();
             if (temporaryContainer == null) return;
 
             Undo.DestroyObjectImmediate(temporaryContainer.gameObject);

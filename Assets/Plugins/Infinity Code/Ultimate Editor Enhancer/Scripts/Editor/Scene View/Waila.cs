@@ -46,7 +46,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
 
         static Waila()
         {
-            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.waila, true);
+            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.Waila, true);
         }
 
         public static void Close()

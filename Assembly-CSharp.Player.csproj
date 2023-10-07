@@ -63,6 +63,7 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHolesKernel2.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel2_EIK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeaturesKernel.cs" />
+     <Compile Include="Assets\Algorithm.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Union32.cs" />
      <Compile Include="Assets\Examples\Triangulations\VoronoiExample.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Quaternion3f.cs" />
@@ -111,10 +112,10 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\CGALIntersections_Shapes.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibilityKernel_EIK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel2_EIK.cs" />
-     <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenVector.cs" />
-     <Compile Include="Assets\Examples\Polygons\CreatePolygonExample.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\ConstrainedTriangulationKernel2_EEK.cs" />
+     <Compile Include="Assets\CGALDotNet\CGALDotNet\Eigen\EigenVector.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment2d.cs" />
+     <Compile Include="Assets\Examples\Polygons\CreatePolygonExample.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowskiKernel_EEK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulationKernel2.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\TriangleIndex.cs" />
@@ -149,8 +150,8 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsCheck.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector3f.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Matrix4x4f.cs" />
-     <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel3.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\TriCell3.cs" />
+     <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel3.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonVisibilityKernel.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Arrangements\ArrQuery.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingConnections.cs" />
@@ -229,6 +230,7 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshVertex3.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\MeshHitResult.cs" />
      <Compile Include="Assets\Examples\Polygons\PolygonPartitionExample.cs" />
+     <Compile Include="Assets\GrahamScan.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polyhedra\NefPolyhedronKernel3.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulationKernel2.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Meshing\ConformingTriangulationKernel2_EIK.cs" />
@@ -243,8 +245,8 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHolesKernel2_EEK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingOrientationKernel_EEK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingSlicerKernel.cs" />
-     <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplification2.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Box3f.cs" />
+     <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonSimplification2.cs" />
      <Compile Include="Assets\Common\Cameras\OrthoCameraController.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\Vector4f.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonWithHoles2.cs" />
@@ -255,8 +257,9 @@
      <Compile Include="Assets\CGALDotNet\Extensions\ExtensionHelper.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Nurbs\NurbsMake.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\DelaunayTriangulation2.cs" />
-     <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment2f.cs" />
+     <Compile Include="Assets\ConvexHullByGraham.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Triangulations\BaseTriangulation3.cs" />
+     <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Shapes\Segment2f.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Geometry\Segment2.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\MathUtil.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polylines\PolylineKernel3_EEK.cs" />
@@ -385,7 +388,6 @@
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Polygons\PolygonMinkowskiKernel_EIK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNet\Processing\MeshProcessingFeaturesKernel_EIK.cs" />
      <Compile Include="Assets\CGALDotNet\CGALDotNetGeometry\Numerics\HPoint2d.cs" />
-     <Compile Include="Assets\NewBehaviourScript.cs" />
      <Reference Include="UnityEngine">
      <HintPath>D:\UnityVersion\2021.3.29f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.dll</HintPath>
      </Reference>
@@ -590,9 +592,6 @@
      <Reference Include="UnityEngine.XRModule">
      <HintPath>D:\UnityVersion\2021.3.29f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.XRModule.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>D:\GithubCode\CGALDotNetUnity\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="Sirenix.OdinInspector.Attributes">
      <HintPath>D:\GithubCode\CGALDotNetUnity\Assets\Plugins\S\Assemblies\Sirenix.OdinInspector.Attributes.dll</HintPath>
      </Reference>
@@ -601,6 +600,9 @@
      </Reference>
      <Reference Include="Sirenix.Serialization">
      <HintPath>D:\GithubCode\CGALDotNetUnity\Assets\Plugins\S\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+     <HintPath>D:\GithubCode\CGALDotNetUnity\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Sirenix.Utilities">
      <HintPath>D:\GithubCode\CGALDotNetUnity\Assets\Plugins\S\Assemblies\NoEmitAndNoEditor\Sirenix.Utilities.dll</HintPath>
@@ -985,6 +987,10 @@
       <Project>{c57605b2-6ad8-28fe-51eb-51f7b43ab59e}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Player.csproj">
+      <Project>{3037b693-706b-d5ef-46b6-5470bbfdf78a}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
       <Project>{f784d403-8ce7-da4e-7850-7544007abebf}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
@@ -1032,10 +1038,6 @@
     <ProjectReference Include="UltimateEditorEnhancer.Player.csproj">
       <Project>{6a5d4513-5b66-71ce-4434-23f809bc9b3b}</Project>
       <Name>UltimateEditorEnhancer.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Player.csproj">
-      <Project>{3037b693-706b-d5ef-46b6-5470bbfdf78a}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

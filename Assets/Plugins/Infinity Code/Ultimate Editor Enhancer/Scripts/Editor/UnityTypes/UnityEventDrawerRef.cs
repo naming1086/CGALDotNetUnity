@@ -38,10 +38,16 @@ namespace InfinityCode.UltimateEditorEnhancer.UnityTypes
             {
                 if (_generatePopUpForTypeMethod == null)
                 {
+#if UNITY_2022_1_OR_NEWER
+                    Type[] types = new[] { typeof(GenericMenu), typeof(Object), typeof(string), typeof(SerializedProperty), typeof(Type[]) };
+#else
+                    Type[] types = new[] { typeof(GenericMenu), typeof(Object), typeof(bool), typeof(SerializedProperty), typeof(Type[]) };
+#endif
+
                     _generatePopUpForTypeMethod = Reflection.GetMethod(
                         type, 
                         "GeneratePopUpForType", 
-                        new[] { typeof(GenericMenu), typeof(Object), typeof(string), typeof(SerializedProperty), typeof(Type[]) }, 
+                        types, 
                         Reflection.StaticLookup);
                 }
 
@@ -73,16 +79,21 @@ namespace InfinityCode.UltimateEditorEnhancer.UnityTypes
             SerializedProperty listener,
             Type[] delegateArgumentsTypes)
         {
+            object[] parameters = new object[]
+            {
+                menu, 
+                target, 
+#if UNITY_2022_1_OR_NEWER
+                targetName,
+#else
+                true,
+#endif
+                listener, 
+                delegateArgumentsTypes
+            };
             generatePopUpForTypeMethod.Invoke(
                 null, 
-                new object[]
-                {
-                    menu, 
-                    target, 
-                    targetName, 
-                    listener, 
-                    delegateArgumentsTypes
-                });
+                parameters);
         }
     }
 }

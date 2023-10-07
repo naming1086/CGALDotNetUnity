@@ -65,15 +65,15 @@ namespace InfinityCode.UltimateEditorEnhancer
                 contextMenuOnRightClick = EditorGUILayout.ToggleLeft("Show Context Menu By Right Click", contextMenuOnRightClick);
                 EditorGUI.BeginDisabledGroup(!contextMenuOnRightClick);
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Space(spaceBeforeModifiers);
-                GUILayout.Label("Modifiers", GUILayout.Width(modifierLabelWidth));
+                GUILayout.Space(SpaceBeforeModifiers);
+                GUILayout.Label("Modifiers", GUILayout.Width(ModifierLabelWidth));
                 rightClickModifiers = DrawModifiers(rightClickModifiers);
                 EditorGUILayout.EndHorizontal();
 
                 pickGameObject = EditorGUILayout.ToggleLeft("Pick GameObject", pickGameObject);
                 EditorGUILayout.BeginHorizontal();
-                GUILayout.Space(spaceBeforeModifiers);
-                GUILayout.Label("Modifiers", GUILayout.Width(modifierLabelWidth));
+                GUILayout.Space(SpaceBeforeModifiers);
+                GUILayout.Label("Modifiers", GUILayout.Width(ModifierLabelWidth));
                 pickGameObjectModifiers = DrawModifiers(pickGameObjectModifiers);
                 EditorGUILayout.EndHorizontal();
 

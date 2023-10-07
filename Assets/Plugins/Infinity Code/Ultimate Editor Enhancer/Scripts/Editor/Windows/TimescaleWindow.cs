@@ -281,7 +281,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
         public static EditorWindow ShowPopupWindow(Vector2 position)
         {
             TimescaleWindow wnd = CreateInstance<TimescaleWindow>();
-            wnd.titleContent = new GUIContent("Bookmarks");
+            wnd.titleContent = new GUIContent("Timescale");
             position = GUIUtility.GUIToScreenPoint(position);
             Vector2 size = new Vector2(300, 44);
             Rect rect = new Rect(position, size);

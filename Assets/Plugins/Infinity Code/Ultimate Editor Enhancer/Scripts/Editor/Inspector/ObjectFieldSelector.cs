@@ -84,9 +84,9 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
                 else
                 {
 #if UNITY_2020_3_OR_NEWER
-                    objects = Object.FindObjectsOfType(fieldType, true);
+                    objects = ObjectHelper.FindObjectsOfType(fieldType, true);
 #else
-                    objects = Object.FindObjectsOfType(field.FieldType);
+                    objects = ObjectHelper.FindObjectsOfType(field.FieldType);
 #endif
                 }
 
@@ -143,7 +143,7 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
             }
             else if (fieldType == typeof(GameObject))
             {
-                objects = Object.FindObjectsOfType<GameObject>();
+                objects = ObjectHelper.FindObjectsOfType<GameObject>();
                 contents = new GUIContent[objects.Length];
                 for (int i = 0; i < objects.Length; i++)
                 {

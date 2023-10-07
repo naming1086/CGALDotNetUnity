@@ -14,12 +14,11 @@ namespace InfinityCode.UltimateEditorEnhancer
     public static partial class Prefs
     {
         public static bool hierarchyBookmarks = true;
-        public static bool hierarchyRowBackground = true;
-        public static HierarchyRowBackgroundStyle hierarchyRowBackgroundStyle = HierarchyRowBackgroundStyle.gradient;
         public static bool hierarchyEnableGameObject = true;
         public static bool hierarchyEnableMiddleClick = true;
         public static bool hierarchyErrorIcons = true;
         public static bool hierarchyIcons = true;
+        public static bool hierarchyIconsHideDefault = false;
         public static HierarchyIconsDisplayRule hierarchyIconsDisplayRule = HierarchyIconsDisplayRule.onHoverWithModifiers;
         public static bool hierarchyNote = true;
         public static bool hierarchyOverrideMainIcon = true;
@@ -37,7 +36,7 @@ namespace InfinityCode.UltimateEditorEnhancer
 
         public class HierarchyManager : StandalonePrefManager<HierarchyManager>, IHasShortcutPref, IStateablePref
         {
-            private const string sectionLabel = "Show Components In Hierarchy";
+            private const string SectionLabel = "Show Components In Hierarchy";
 
             public override IEnumerable<string> keywords
             {
@@ -62,11 +61,6 @@ namespace InfinityCode.UltimateEditorEnhancer
                 }
             }
 
-            public override float order
-            {
-                get { return -46; }
-            }
-
             public override void Draw()
             {
                 hierarchyEnableGameObject = EditorGUILayout.ToggleLeft("Enable / Disable GameObject", hierarchyEnableGameObject);
@@ -79,7 +73,6 @@ namespace InfinityCode.UltimateEditorEnhancer
 
                 hierarchyMarginRight = EditorGUILayout.FloatField("Icon Right Margin", hierarchyMarginRight);
 
-                DrawRowBackground();
                 DrawBestComponents();
                 DrawHierarchyIcons();
 
@@ -97,21 +90,30 @@ namespace InfinityCode.UltimateEditorEnhancer
                 if (!EditorGUI.EndChangeCheck()) return;
 
                 Object[] windows = UnityEngine.Resources.FindObjectsOfTypeAll(SceneHierarchyWindowRef.type);
-                foreach (Object wnd in windows)
+                foreach (Object window in windows)
                 {
-                    EditorWindow window = wnd as EditorWindow;
-                    HierarchyHelper.SetDefaultIconsSize(window, hierarchyOverrideMainIcon ? 0 : 18);
-                    window.Repaint();
+                    EditorWindow wnd = window as EditorWindow;
+                    HierarchyHelper.SetDefaultIconsSize(wnd, hierarchyOverrideMainIcon ? 0 : 18);
+                    wnd.Repaint();
                 }
             }
 
             private static void DrawHierarchyIcons()
             {
-                hierarchyIcons = EditorGUILayout.ToggleLeft(sectionLabel, hierarchyIcons, EditorStyles.label);
+                hierarchyIcons = EditorGUILayout.ToggleLeft(SectionLabel, hierarchyIcons, EditorStyles.label);
 
                 EditorGUI.indentLevel++;
+                
+                EditorGUI.BeginChangeCheck();
+                hierarchyIconsHideDefault = EditorGUILayout.ToggleLeft("Hide Default Icons", hierarchyIconsHideDefault);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    ComponentIconDrawer.ClearCache();
+                    EditorApplication.RepaintHierarchyWindow();
+                }
+                
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(labelWidth - 17));
+                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(LabelWidth - 17));
                 hierarchyIconsModifiers = DrawModifiers(hierarchyIconsModifiers);
                 EditorGUILayout.EndHorizontal();
 
@@ -120,25 +122,6 @@ namespace InfinityCode.UltimateEditorEnhancer
 
                 hierarchyIconsDisplayRule = (HierarchyIconsDisplayRule)EditorGUILayout.EnumPopup("Display Rule", hierarchyIconsDisplayRule);
 
-                EditorGUI.indentLevel--;
-            }
-
-            private static void DrawRowBackground()
-            {
-                hierarchyRowBackground = EditorGUILayout.ToggleLeft("Row Background", hierarchyRowBackground);
-
-                EditorGUI.indentLevel++;
-                EditorGUI.BeginDisabledGroup(!hierarchyRowBackground);
-
-                EditorGUI.BeginChangeCheck();
-                hierarchyRowBackgroundStyle = (HierarchyRowBackgroundStyle)EditorGUILayout.EnumPopup("Style", hierarchyRowBackgroundStyle);
-                if (EditorGUI.EndChangeCheck())
-                {
-                    BackgroundDrawer.backgroundTexture = null;
-                    EditorApplication.RepaintHierarchyWindow();
-                }
-
-                EditorGUI.EndDisabledGroup();
                 EditorGUI.indentLevel--;
             }
 

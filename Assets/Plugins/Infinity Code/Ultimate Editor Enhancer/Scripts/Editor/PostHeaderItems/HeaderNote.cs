@@ -76,7 +76,7 @@ namespace InfinityCode.UltimateEditorEnhancer.PostHeader
         {
             if (state == PlayModeStateChange.ExitingPlayMode)
             {
-                RuntimeNote[] runtimeNotes = Object.FindObjectsOfType<RuntimeNote>();
+                RuntimeNote[] runtimeNotes = ObjectHelper.FindObjectsOfType<RuntimeNote>();
                 foreach (RuntimeNote runtimeNote in runtimeNotes)
                 {
                     SavableNote note = new SavableNote
@@ -131,8 +131,16 @@ namespace InfinityCode.UltimateEditorEnhancer.PostHeader
             NoteItem note;
             NoteManager.TryGetValue(go, out note);
 
-            GUIContent content = note.isEmpty ? TempContent.Get(Icons.noteEmpty, "Add Note") : TempContent.Get(Icons.note, "Show/Hide Note");
-            note.expanded = Toggle(content, note.expanded);
+            GUIContent content = note.isEmpty ? 
+                TempContent.Get(Icons.noteEmpty, "Add Note\nRight click to open Note Manager") : 
+                TempContent.Get(Icons.note, "Show/Hide Note\nRight click to open Note Manager");
+            ButtonEvent buttonEvent = GUILayoutUtils.ToggleButton(content, EditorStyles.toolbarButton, note.expanded, GUILayout.Width(20), GUILayout.Height(20));
+            if (buttonEvent == ButtonEvent.click)
+            {
+                Event e = Event.current;
+                if (e.button == 0) note.expanded = !note.expanded;
+                else if (e.button == 1) NoteManager.Open();
+            }
         }
         
         internal class SavableNote

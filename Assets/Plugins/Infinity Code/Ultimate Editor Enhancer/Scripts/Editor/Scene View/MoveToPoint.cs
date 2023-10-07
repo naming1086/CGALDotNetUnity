@@ -12,7 +12,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
     {
         static MoveToPoint()
         {
-            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.early);
+            SceneViewManager.AddListener(OnSceneGUI, SceneViewOrder.Early);
         }
 
         private static void OnSceneGUI(SceneView view)

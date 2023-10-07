@@ -1,6 +1,7 @@
 ﻿/*           INFINITY CODE          */
 /*     https://infinity-code.com    */
 
+using System;
 using System.Linq;
 using InfinityCode.UltimateEditorEnhancer.UnityTypes;
 using UnityEditor;
@@ -12,6 +13,8 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
     [EditorTool("Pivot Tool")]
     public class PivotTool : EditorTool
     {
+        public const string StyleID = "sv_label_4";
+        
         private static GUIContent activeContent;
         private static Vector3 firstPoint;
         private static Texture handleIcon;
@@ -20,6 +23,9 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
 
         private static GUIContent passiveContent;
         private static int pointIndex;
+        
+        private static bool hasRenderers;
+        private static GUIStyle style;
 
         public override GUIContent toolbarIcon
         {
@@ -38,16 +44,6 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
                 if (passiveContent == null) passiveContent = new GUIContent(Icons.pivotTool, "Pivot Tool");
                 return passiveContent;
             }
-        }
-
-#if UNITY_2020_3_OR_NEWER
-        public override void OnActivated()
-#else
-        private void OnEnable()
-#endif
-        {
-            mode = 0;
-            pointIndex = 0;
         }
 
         private void ChangePivot(Vector3 position, Quaternion rotation)
@@ -100,6 +96,84 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
             Undo.CollapseUndoOperations(@group);
         }
 
+        private void CheckRenderers()
+        {
+            if (Selection.gameObjects.Length == 0)
+            {
+                hasRenderers = false;
+                return;
+            }
+            hasRenderers = Selection.gameObjects.Any(g => g.GetComponent<MeshRenderer>() != null);
+        }
+        
+        private static void DrawMeshRendererWarning(EditorWindow window, Vector3 position, Quaternion rotation)
+        {
+            if (!hasRenderers) return;
+            
+            Handles.BeginGUI();
+            
+            if (style == null)
+            {
+                style = new GUIStyle(Styles.normalRow)
+                {
+                    fontSize = 10,
+                    alignment = TextAnchor.MiddleLeft,
+                    wordWrap = false,
+                    fixedHeight = 0,
+                    border = new RectOffset(8, 8, 8, 8)
+                };
+            }
+
+            SceneView sceneView = window as SceneView;
+            const string message = "The selected GameObjects contain MeshRenderer components on themselves.\nWrap into a new empty GameObject to change the pivot correctly?";
+            GUIContent content = TempContent.Get(message);
+            Texture iconTexture = EditorIconContents.consoleErrorIconSmall.image;
+
+            Vector2 size = EditorStyles.label.CalcSize(content);
+            size.x += 50;
+            size.y += 35;
+
+            float pixelPerPoint = EditorGUIUtility.pixelsPerPoint;
+            Vector3 screenPoint = sceneView.camera.WorldToScreenPoint(UnityEditor.Tools.handlePosition) / pixelPerPoint;
+            if (screenPoint.y > size.y + 150 / pixelPerPoint)
+            {
+                screenPoint.y -= size.y + 50 / pixelPerPoint;
+            }
+            else
+            {
+                screenPoint.y += size.y + 150 / pixelPerPoint;
+            }
+
+            Rect rect = new Rect(screenPoint.x - size.x / 2, Screen.height / pixelPerPoint - screenPoint.y - size.y / 2, size.x, size.y);
+
+            GUI.Box(rect, GUIContent.none, style);
+            
+            Rect iconRect = new Rect(rect.x + 5, rect.y + 5, 32, 32);
+            GUI.DrawTexture(iconRect, iconTexture, ScaleMode.ScaleToFit);
+
+            Rect labelRect = new Rect(rect.x + 40, rect.y + 5, rect.width - 45, rect.height - 35);
+            GUI.Label(labelRect, content);
+
+            Rect buttonRect = new Rect(rect.x + 5, labelRect.yMax + 5, rect.width - 10, 20);
+            if (GUI.Button(buttonRect, "Wrap", EditorStyles.toolbarButton)) WrapSelection(position, rotation);
+
+            Handles.EndGUI();
+        }
+
+#if UNITY_2020_3_OR_NEWER
+        public override void OnActivated()
+#else
+        private void OnEnable()
+#endif
+        {
+            mode = 0;
+            pointIndex = 0;
+
+            Selection.selectionChanged -= CheckRenderers;
+            Selection.selectionChanged += CheckRenderers;
+            CheckRenderers();
+        }
+
         public override void OnToolGUI(EditorWindow window)
         {
             if (Selection.gameObjects.Length == 0) return;
@@ -144,7 +218,6 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
                 if (e.keyCode == KeyCode.V || e.keyCode == KeyCode.LeftShift)
                 {
                     mode = Mode.Move;
-                    //e.Use();
                 }
             }
 
@@ -218,12 +291,37 @@ namespace InfinityCode.UltimateEditorEnhancer.Tools
             }
 
             if (EditorGUI.EndChangeCheck() || changed) ChangePivot(position, rotation);
+            
+            DrawMeshRendererWarning(window, position, rotation);
         }
 
+#if UNITY_2020_3_OR_NEWER
+        public override void OnWillBeDeactivated()
+#else
+	    private void OnDisable()
+#endif
+        {
+            Selection.selectionChanged -= CheckRenderers;
+        }
+        
         private void SetOrientation(Vector3 v1, Vector3 v2, Vector3 axis)
         {
             Quaternion rotation = Quaternion.FromToRotation(axis, v2 - v1);
             ChangePivot(UnityEditor.Tools.handlePosition, rotation);
+        }
+
+        private static void WrapSelection(Vector3 position, Quaternion rotation)
+        {
+            GameObject go = new GameObject("GameObject Wrapper");
+            Undo.RegisterCreatedObjectUndo(go, "Wrap");
+            go.transform.position = position;
+            go.transform.rotation = rotation;
+            foreach (GameObject gameObject in Selection.gameObjects)
+            {
+                Undo.SetTransformParent(gameObject.transform, go.transform, "Wrap");
+            }
+
+            Selection.activeGameObject = go;
         }
 
         private class PRS

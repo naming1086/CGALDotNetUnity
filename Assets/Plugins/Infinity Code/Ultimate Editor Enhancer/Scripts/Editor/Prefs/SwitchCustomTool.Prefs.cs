@@ -32,13 +32,13 @@ namespace InfinityCode.UltimateEditorEnhancer
                 EditorGUI.indentLevel++;
 
                 float oldLabelWidth = EditorGUIUtility.labelWidth;
-                EditorGUIUtility.labelWidth = labelWidth + 5;
+                EditorGUIUtility.labelWidth = LabelWidth + 5;
                 switchCustomToolKeyCode = (KeyCode)EditorGUILayout.EnumPopup("Hot Key", switchCustomToolKeyCode, GUILayout.Width(420));
                 EditorGUIUtility.labelWidth = oldLabelWidth;
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Space(16);
-                GUILayout.Label("Modifiers", GUILayout.Width(modifierLabelWidth + 15));
+                GUILayout.Label("Modifiers", GUILayout.Width(ModifierLabelWidth + 15));
                 switchCustomToolModifiers = DrawModifiers(switchCustomToolModifiers, true);
                 EditorGUILayout.EndHorizontal();
 

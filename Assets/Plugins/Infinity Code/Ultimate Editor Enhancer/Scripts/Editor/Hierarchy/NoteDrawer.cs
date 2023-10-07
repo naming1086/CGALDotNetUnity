@@ -12,7 +12,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
     {
         static NoteDrawer()
         {
-            HierarchyItemDrawer.Register("NoteDrawer", DrawHierarchyItem, HierarchyToolOrder.NOTE);
+            HierarchyItemDrawer.Register("NoteDrawer", DrawHierarchyItem, HierarchyToolOrder.Note);
         }
 
         private static void DrawHierarchyItem(HierarchyItem item)

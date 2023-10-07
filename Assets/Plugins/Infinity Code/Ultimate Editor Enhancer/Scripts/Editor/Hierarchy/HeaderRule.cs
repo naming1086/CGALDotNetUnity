@@ -220,10 +220,17 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
             if (!enabled) return false;
 
             string name = go.name;
-            if (condition == HeaderCondition.nameStarts) return StringHelper.StartsWith(name, value);
-            if (condition == HeaderCondition.nameContains) return StringHelper.Contains(name, value);
-            if (condition == HeaderCondition.nameEqual) return name == value;
-            return false;
+            switch (condition)
+            {
+                case HeaderCondition.nameStarts:
+                    return StringHelper.StartsWith(name, value);
+                case HeaderCondition.nameContains:
+                    return StringHelper.Contains(name, value);
+                case HeaderCondition.nameEqual:
+                    return name == value;
+                default:
+                    return false;
+            }
         }
     }
 }

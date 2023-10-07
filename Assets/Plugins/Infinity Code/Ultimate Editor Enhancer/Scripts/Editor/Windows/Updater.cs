@@ -18,11 +18,12 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 {
     public class Updater : EditorWindow
     {
-        private const string packageID = "Ultimate Editor Enhancer";
-        private const string lastVersionKey = Prefs.Prefix + "LastVersion";
-        private const string lastVersionCheckKey = Prefs.Prefix + "LastVersionCheck";
-        private const string channelKey = Prefs.Prefix + "UpdateChannel";
-        private const string invoiceNumberKey = Prefs.Prefix + "InvoiceNumber";
+        private const string PackageID = "Ultimate Editor Enhancer";
+        private const string LastVersionKey = Prefs.Prefix + "LastVersion";
+        private const string LastVersionCheckKey = Prefs.Prefix + "LastVersionCheck";
+        private const string ChannelKey = Prefs.Prefix + "UpdateChannel";
+        private const string InvoiceNumberKey = Prefs.Prefix + "InvoiceNumber";
+        private const long TicksInHour = 36000000000;
 
         public static bool hasNewVersion = false;
 
@@ -49,9 +50,9 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         public static void CheckNewVersionAvailable()
         {
-            if (EditorPrefs.HasKey(lastVersionKey))
+            if (EditorPrefs.HasKey(LastVersionKey))
             {
-                lastVersionID = EditorPrefs.GetString(lastVersionKey);
+                lastVersionID = EditorPrefs.GetString(LastVersionKey);
 
                 if (CompareVersions())
                 {
@@ -60,20 +61,18 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
                 }
             }
 
-            const long ticksInHour = 36000000000;
-
-            if (EditorPrefs.HasKey(lastVersionCheckKey))
+            if (EditorPrefs.HasKey(LastVersionCheckKey))
             {
-                long lastVersionCheck = EditorPrefs.GetInt(lastVersionCheckKey) * ticksInHour;
-                if (DateTime.Now.Ticks - lastVersionCheck < 24 * ticksInHour)
+                long lastVersionCheck = EditorPrefs.GetInt(LastVersionCheckKey) * TicksInHour;
+                if (DateTime.Now.Ticks - lastVersionCheck < 24 * TicksInHour)
                 {
                     return;
                 }
             }
 
-            EditorPrefs.SetInt(lastVersionCheckKey, (int)(DateTime.Now.Ticks / ticksInHour));
+            EditorPrefs.SetInt(LastVersionCheckKey, (int)(DateTime.Now.Ticks / TicksInHour));
 
-            if (EditorPrefs.HasKey(channelKey)) channel = (Channel)EditorPrefs.GetInt(channelKey);
+            if (EditorPrefs.HasKey(ChannelKey)) channel = (Channel)EditorPrefs.GetInt(ChannelKey);
             else channel = Channel.stable;
 
             if (channel == Channel.stablePrevious) channel = Channel.stable;
@@ -114,7 +113,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
                 hasNewVersion = CompareVersions();
                 EditorApplication.update += SetLastVersion;
             };
-            client.UploadDataAsync(new Uri("https://infinity-code.com/products_update/getlastversion.php"), "POST", Encoding.UTF8.GetBytes("c=" + (int)channel + "&package=" + UnityWebRequest.EscapeURL(packageID)));
+            client.UploadDataAsync(new Uri("https://infinity-code.com/products_update/getlastversion.php"), "POST", Encoding.UTF8.GetBytes("c=" + (int)channel + "&package=" + UnityWebRequest.EscapeURL(PackageID)));
         }
 
         private static bool CompareVersions()
@@ -145,7 +144,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
             WebClient client = new WebClient();
             client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
             string updateKey = client.UploadString("https://infinity-code.com/products_update/getupdatekey.php",
-                "key=" + invoiceNumber + "&package=" + UnityWebRequest.EscapeURL(packageID));
+                "key=" + invoiceNumber + "&package=" + UnityWebRequest.EscapeURL(PackageID));
 
             return updateKey;
         }
@@ -179,10 +178,10 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private void OnEnable()
         {
-            if (EditorPrefs.HasKey(invoiceNumberKey)) invoiceNumber = EditorPrefs.GetString(invoiceNumberKey);
+            if (EditorPrefs.HasKey(InvoiceNumberKey)) invoiceNumber = EditorPrefs.GetString(InvoiceNumberKey);
             else invoiceNumber = "";
 
-            if (EditorPrefs.HasKey(channelKey)) channel = (Channel)EditorPrefs.GetInt(channelKey);
+            if (EditorPrefs.HasKey(ChannelKey)) channel = (Channel)EditorPrefs.GetInt(ChannelKey);
             else channel = Channel.stable;
 
             helpContent = new GUIContent(Icons.help, "You can find out your Invoice Number in the email confirming the purchase, or page the user in Unity Asset Store.\nClick to go to the Unity Asset Store.");
@@ -232,13 +231,13 @@ namespace InfinityCode.UltimateEditorEnhancer.Windows
 
         private void SavePrefs()
         {
-            EditorPrefs.SetString(invoiceNumberKey, invoiceNumber);
-            EditorPrefs.SetInt(channelKey, (int)channel);
+            EditorPrefs.SetString(InvoiceNumberKey, invoiceNumber);
+            EditorPrefs.SetInt(ChannelKey, (int)channel);
         }
 
         private static void SetLastVersion()
         {
-            EditorPrefs.SetString(lastVersionKey, lastVersionID);
+            EditorPrefs.SetString(LastVersionKey, lastVersionID);
             EditorApplication.update -= SetLastVersion;
         }
 

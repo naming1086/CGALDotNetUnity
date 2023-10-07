@@ -16,7 +16,7 @@ namespace InfinityCode.UltimateEditorEnhancer
 
         public static GameObject GetContainer()
         {
-            TemporaryContainer temporaryContainer = FindObjectOfType<TemporaryContainer>();
+            TemporaryContainer temporaryContainer = ObjectHelper.FindObjectOfType<TemporaryContainer>();
             if (temporaryContainer == null)
             {
                 GameObject go = new GameObject("Temporary Container");

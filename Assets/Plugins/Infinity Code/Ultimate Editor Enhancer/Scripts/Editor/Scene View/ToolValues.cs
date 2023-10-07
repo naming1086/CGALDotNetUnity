@@ -37,7 +37,7 @@ namespace InfinityCode.UltimateEditorEnhancer.SceneTools
 
         static ToolValues()
         {
-            SceneViewManager.AddListener(OnSceneViewGUI, SceneViewOrder.normal, true);
+            SceneViewManager.AddListener(OnSceneViewGUI, SceneViewOrder.Normal, true);
             Selection.selectionChanged += OnSelectionChanged;
             OnSelectionChanged();
         }

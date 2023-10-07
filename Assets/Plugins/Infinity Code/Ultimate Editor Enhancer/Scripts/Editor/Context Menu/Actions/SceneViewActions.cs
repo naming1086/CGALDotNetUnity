@@ -92,7 +92,7 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus.Actions
 
         private void DeleteAllViewStates()
         {
-            ViewState[] views = Object.FindObjectsOfType<ViewState>();
+            ViewState[] views = ObjectHelper.FindObjectsOfType<ViewState>();
             for (int i = 0; i < views.Length; i++) Object.DestroyImmediate(views[i].gameObject);
             EditorMenu.Close();
         }
@@ -122,7 +122,7 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus.Actions
 
         private void InitAlignViewToCameraMenu(GenericMenuEx menu)
         {
-            Camera[] cameras = Object.FindObjectsOfType<Camera>().OrderBy(c => c.name).ToArray();
+            Camera[] cameras = ObjectHelper.FindObjectsOfType<Camera>().OrderBy(c => c.name).ToArray();
             if (cameras.Length > 0)
             {
                 for (int i = 0; i < cameras.Length; i++)
@@ -140,7 +140,7 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus.Actions
 
             menu.Add("View States/Create For Selection", SelectionViewStates.AddToSelection);
 
-            ViewState[] views = Object.FindObjectsOfType<ViewState>().OrderBy(v => v.title).ToArray();
+            ViewState[] views = ObjectHelper.FindObjectsOfType<ViewState>().OrderBy(v => v.title).ToArray();
             if (views.Length > 0)
             {
                 for (int i = 0; i < views.Length; i++)

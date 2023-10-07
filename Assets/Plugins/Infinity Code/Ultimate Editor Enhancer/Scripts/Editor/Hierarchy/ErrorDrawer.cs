@@ -14,7 +14,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
     {
         static ErrorDrawer()
         {
-            HierarchyItemDrawer.Register("ErrorDrawer", DrawHierarchyItem, HierarchyToolOrder.ERROR);
+            HierarchyItemDrawer.Register("ErrorDrawer", DrawHierarchyItem, HierarchyToolOrder.Error);
         }
 
         private static void DrawHierarchyItem(HierarchyItem item)

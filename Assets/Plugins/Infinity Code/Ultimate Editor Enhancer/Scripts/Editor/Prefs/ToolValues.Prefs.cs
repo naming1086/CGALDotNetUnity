@@ -34,7 +34,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                 showToolValues = EditorGUILayout.ToggleLeft("Show Tool Values In SceneView", showToolValues);
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Space(20);
-                GUILayout.Label("Modifiers", GUILayout.Width(modifierLabelWidth + 15));
+                GUILayout.Label("Modifiers", GUILayout.Width(ModifierLabelWidth + 15));
                 toolValuesModifiers = DrawModifiers(toolValuesModifiers, true);
                 EditorGUILayout.EndHorizontal();
             }

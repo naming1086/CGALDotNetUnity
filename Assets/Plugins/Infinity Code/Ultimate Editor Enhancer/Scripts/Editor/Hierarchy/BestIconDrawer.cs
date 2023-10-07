@@ -12,7 +12,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
     [InitializeOnLoad]
     public static class BestIconDrawer
     {
-        private const double CACHE_LIFE_TIME_SEC = 5;
+        private const double CacheLifeTimeSec = 5;
         
         private static Texture _prefabIcon;
         private static Texture _unityLogoTexture;
@@ -41,7 +41,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
         static BestIconDrawer()
         {
             hierarchyWindows = new HashSet<int>();
-            HierarchyItemDrawer.Register("BestIconDrawer", DrawItem, HierarchyToolOrder.BEST_ICON);
+            HierarchyItemDrawer.Register("BestIconDrawer", DrawItem, HierarchyToolOrder.BestIcon);
         }
 
         private static void DrawItem(HierarchyItem item)
@@ -129,7 +129,7 @@ namespace InfinityCode.UltimateEditorEnhancer.HierarchyTools
             CachedTexture cachedTexture;
             if (cachedTextures.TryGetValue(item.id, out cachedTexture))
             {
-                if (EditorApplication.timeSinceStartup - cachedTexture.time < CACHE_LIFE_TIME_SEC)
+                if (EditorApplication.timeSinceStartup - cachedTexture.time < CacheLifeTimeSec)
                 {
                     texture = cachedTexture.texture;
                     return true; 

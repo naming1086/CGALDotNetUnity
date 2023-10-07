@@ -43,7 +43,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                 EditorGUI.BeginDisabledGroup(!objectPlacer);
 
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(labelWidth));
+                EditorGUILayout.LabelField("Modifiers", GUILayout.Width(LabelWidth));
                 objectPlacerModifiers = DrawModifiers(objectPlacerModifiers);
                 EditorGUILayout.EndHorizontal();
 

@@ -19,7 +19,7 @@ namespace InfinityCode.UltimateEditorEnhancer.ProjectTools
         {
             get
             {
-                return AssetDatabase.LoadAssetAtPath<Object>(path);
+                return ProjectAssetCache.Get<Object>(path);
             }
         }
 

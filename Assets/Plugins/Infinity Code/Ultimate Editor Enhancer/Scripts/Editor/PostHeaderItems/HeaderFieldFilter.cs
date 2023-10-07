@@ -1,7 +1,6 @@
 ﻿/*           INFINITY CODE          */
 /*     https://infinity-code.com    */
 
-using System;
 using System.Collections.Generic;
 using InfinityCode.UltimateEditorEnhancer.UnityTypes;
 using UnityEditor;
@@ -13,7 +12,7 @@ namespace InfinityCode.UltimateEditorEnhancer.PostHeader
 {
     public class HeaderFieldFilter : PostHeaderItem
     {
-        private const string SEARCHBOX_NAME = "UEEFieldFilter";
+        private const string SearchBoxName = "UEEFieldFilter";
         
         private bool active = false;
         private string searchText;
@@ -31,12 +30,12 @@ namespace InfinityCode.UltimateEditorEnhancer.PostHeader
             if (go == null) return;
 
             EditorGUI.BeginChangeCheck();
-            GUI.SetNextControlName(SEARCHBOX_NAME);
+            GUI.SetNextControlName(SearchBoxName);
             searchText = GUILayoutUtils.ToolbarSearchField(searchText);
             
             if (focusOnTextField && Event.current.type == EventType.Repaint)
             {
-                GUI.FocusControl(SEARCHBOX_NAME);
+                GUI.FocusControl(SearchBoxName);
                 focusOnTextField = false;
             }
             

@@ -3,8 +3,6 @@
 
 using System;
 using System.Collections;
-using System.Linq;
-using System.Reflection;
 using InfinityCode.UltimateEditorEnhancer.JSON;
 using UnityEditor;
 using UnityEngine;
@@ -124,13 +122,25 @@ namespace InfinityCode.UltimateEditorEnhancer
             switch (prop.propertyType)
             {
                 case SerializedPropertyType.Generic:
-                    JsonArray array = json as JsonArray;
-                    if (array == null) return;
-                    int arraySize = array.count;
-                    prop.arraySize = arraySize;
-                    for (int i = 0; i < arraySize; i++)
+                    if (prop.isArray)
                     {
-                        FromJson(prop.GetArrayElementAtIndex(i), array[i]);
+                        JsonArray array = json as JsonArray;
+                        if (array == null) return;
+                        int arraySize = array.count;
+                        prop.arraySize = arraySize;
+                        for (int i = 0; i < arraySize; i++)
+                        {
+                            FromJson(prop.GetArrayElementAtIndex(i), array[i]);
+                        }
+                    }
+                    
+                    JsonObject obj = json as JsonObject;
+                    if (obj == null) return;
+                    foreach (var pair in obj.table)
+                    {
+                        SerializedProperty child = prop.FindPropertyRelative(pair.Key);
+                        if (child == null) continue;
+                        FromJson(child, pair.Value);
                     }
 
                     break;
@@ -324,7 +334,7 @@ namespace InfinityCode.UltimateEditorEnhancer
                         break;
                     case SerializedPropertyType.Character:
 #if UNITY_2022_1_OR_NEWER
-                        prop.uintValue = (uint)Convert.ToUInt16(value);
+                        prop.uintValue = Convert.ToUInt16(value);
 #endif
                         break;
                     case SerializedPropertyType.AnimationCurve:
@@ -377,14 +387,26 @@ namespace InfinityCode.UltimateEditorEnhancer
             switch (prop.propertyType)
             {
                 case SerializedPropertyType.Generic:
-                    JsonArray array = new JsonArray();
+                    if (prop.isArray)
+                    {
+                        JsonArray array = new JsonArray();
+                        for (int i = 0; i < prop.arraySize; i++)
+                        {
+                            array.Add(ToJson(prop.GetArrayElementAtIndex(i)));
+                        }
+
+                        return array;
+                    }
+                    
+                    JsonObject obj = new JsonObject();
                     IEnumerator enumerator = prop.GetEnumerator();
                     while (enumerator.MoveNext())
                     {
-                        array.Add(ToJson((SerializedProperty)enumerator.Current));
+                        SerializedProperty current = (SerializedProperty)enumerator.Current;
+                        obj.Add(current.name, ToJson(current));
                     }
 
-                    return array;
+                    return obj;
                 case SerializedPropertyType.Integer:
                 case SerializedPropertyType.Enum:
 #if UNITY_2022_1_OR_NEWER

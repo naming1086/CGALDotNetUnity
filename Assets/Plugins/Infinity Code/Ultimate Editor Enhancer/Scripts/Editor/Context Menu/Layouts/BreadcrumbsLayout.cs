@@ -267,7 +267,6 @@ namespace InfinityCode.UltimateEditorEnhancer.EditorMenus.Layouts
             int ox = 0;
             int oy = -20;
             rect.position = position - new Vector2(rect.width / 2, rect.height) + offset + new Vector2(ox, oy);
-            if (rect.x < 1) rect.x = 1;
 
 #if !UNITY_EDITOR_OSX
             int screenWidth = Screen.currentResolution.width;

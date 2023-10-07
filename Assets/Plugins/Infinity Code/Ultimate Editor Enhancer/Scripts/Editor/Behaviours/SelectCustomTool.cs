@@ -8,6 +8,7 @@ using InfinityCode.UltimateEditorEnhancer.UnityTypes;
 using UnityEditor;
 using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace InfinityCode.UltimateEditorEnhancer.Behaviors
 {
@@ -52,6 +53,7 @@ namespace InfinityCode.UltimateEditorEnhancer.Behaviors
         private static bool OnValidateShortcut()
         {
             if (!Prefs.switchCustomTool) return false;
+            if (EditorWindow.focusedWindow != null && !(EditorWindow.focusedWindow is SceneView)) return false;
             Event e = Event.current;
             if (e.keyCode != Prefs.switchCustomToolKeyCode || e.modifiers != Prefs.switchCustomToolModifiers) return false;
             return !EditorGUIRef.IsEditingTextField();

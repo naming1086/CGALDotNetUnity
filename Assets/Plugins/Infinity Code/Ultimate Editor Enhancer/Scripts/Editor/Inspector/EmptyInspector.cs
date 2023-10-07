@@ -14,8 +14,8 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 {
     public class EmptyInspector: InspectorInjector
     {
-        private const string ELEMENT_NAME = "EmptyInspector";
-        private const string SEARCHFIELD_NAME = "UEEEmptyInspectorSearchField";
+        private const string ElementName = "EmptyInspector";
+        private const string SearchFieldName = "UEEEmptyInspectorSearchField";
 
         private static EmptyInspector instance;
         private static VisualElement visualElement;
@@ -61,7 +61,7 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
         private void DrawFilterTextField()
         {
             GUILayout.BeginHorizontal();
-            GUI.SetNextControlName(SEARCHFIELD_NAME);
+            GUI.SetNextControlName(SearchFieldName);
             EditorGUI.BeginChangeCheck();
             filterText = GUILayoutUtils.ToolbarSearchField(filterText);
             if (EditorGUI.EndChangeCheck()) UpdateFilteredItems();
@@ -144,14 +144,14 @@ namespace InfinityCode.UltimateEditorEnhancer.InspectorTools
 
         protected override bool OnInject(EditorWindow wnd, VisualElement mainContainer, VisualElement editorsList)
         {
-            if (editorsList.parent[0].name == ELEMENT_NAME) editorsList.parent.RemoveAt(0);
+            if (editorsList.parent[0].name == ElementName) editorsList.parent.RemoveAt(0);
             if (!Prefs.emptyInspector || ReferenceManager.emptyInspectorItems.Count == 0) return false;
             if (editorsList.childCount != 0 || float.IsNaN(editorsList.layout.width)) return false;
 
             if (visualElement == null)
             {
                 visualElement = new VisualElement();
-                visualElement.name = ELEMENT_NAME;
+                visualElement.name = ElementName;
                 InitItems(visualElement);
             }
             editorsList.parent.Insert(0, visualElement);
